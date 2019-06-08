@@ -8,7 +8,7 @@
         <title>Adverse Impact Analysis</title>
     </head>
     <body style="background: black; font-family: 'Montserrat', sans-serif;">
-        
+
         <div class="container text-white">
             <h1 class="text-danger text-center my-5">
                 Adverse Impact Analysis
@@ -38,7 +38,7 @@
                         <input type="number" class="form-control" id="selectedBlacks" placeholder="">
                         <small class="form-text text-muted">Integer Value <= Total Number of Blacks/Africans</small>
                     </div>
-                </div>  
+                </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of Hispanic/Latinos</label>
@@ -99,7 +99,7 @@
                         <small class="form-text text-muted">Integer Value <= Total Number of Two/More Races</small>
                     </div>
                 </div>
-                <h5 class="text-left mt-4 mb-3 text-success">Select Benchmark Group</h5>                
+                <h5 class="text-left mt-4 mb-3 text-success">Select Benchmark Group</h5>
                 <div class="form-check p-0" id="benchmark-form">
                     <div class="row">
                         <div class="col-auto col-lg-4">
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <h5 class="text-left mt-4 mb-3 text-success">Select Protected Group</h5>                
+                <h5 class="text-left mt-4 mb-3 text-success">Select Protected Group</h5>
                 <div class="form-check p-0" id="protected-form">
                     <div class="row">
                         <div class="col-auto col-lg-4">
@@ -173,11 +173,11 @@
                 <div class="row mb-5 d-none" id="results">
                     <div class="col">
                         <h2 class="text-danger text-center">Results</h2>
-                        <h5 class="text-left mt-3 text-success">Adverse-Impact Report: <span class="text-white" id="aiReport">00.00</span></h5>  
-                        <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReport">00.00</span></h5>  
-                        <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReport">00.00</span></h5>  
-                        <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReport">00.00</span></h5>  
-                        <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReport">00.00</span></h5>  
+                        <h5 class="text-left mt-3 text-success">Adverse-Impact Report: <span class="text-white" id="aiReport">00.00</span></h5>
+                        <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReport">00.00</span></h5>
+                        <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReport">00.00</span></h5>
+                        <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReport">00.00</span></h5>
+                        <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReport">00.00</span></h5>
                     </div>
                 </div>
             </form>
@@ -186,22 +186,22 @@
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-        
+
         <script type="text/javascript">
-            
+
             var sendData = null;
-            
+
             function compute(e) {
-                
+
                 e.preventDefault();
                 $("#results").addClass('d-none');
 
                 if(checkInputs()) {
                     $.ajax({
                         method: 'POST',
-                        url: "/api/compute", 
+                        url: "/api/compute",
                         beforeSend: function() {
-                            
+
                             var totalWhites = $("#totalWhites").val() == "" ? 0 : $("#totalWhites").val();
                             var selectedWhites = $("#selectedWhites").val() == "" ? 0 : $("#selectedWhites").val();
 
@@ -248,7 +248,7 @@
                         },
                         data: sendData,
                         success: function(result){
-                            
+
                             if(result['error']) {
                                 compute(e);
                             }
@@ -263,7 +263,7 @@
             }
 
             function checkInputs() {
-                
+
                 var totalWhites = $("#totalWhites").val();
                 var selectedWhites = $("#selectedWhites").val();
 
@@ -284,7 +284,7 @@
 
                 var totalTows = $("#totalTows").val();
                 var selectedTows = $("#selectedTows").val();
-                
+
                 if(totalWhites >= 0 && totalBlacks >= 0 && totalHispanics >= 0 && totalHawaiians >= 0 && totalAsians >= 0 && totalAmericans >= 0 && totalTows >= 0) {
                     if(selectedWhites >= 0 && selectedBlacks >= 0 && selectedHispanics >= 0 && selectedHawaiians >= 0 && selectedAsians >= 0 && selectedAmericans >= 0 && selectedTows >= 0) {
                         if(selectedWhites <= totalWhites && selectedBlacks <= totalBlacks && selectedHispanics <= totalHispanics && selectedHawaiians <= totalHawaiians && selectedAsians <= totalAsians && selectedAmericans <= totalAmericans && selectedTows <= totalTows) {
@@ -296,7 +296,7 @@
                                 if($('input[name=protected]:checked', '#protected-form').val() === undefined) {
                                     alert("Select a Protected group");
                                     return false;
-                                } 
+                                }
                                 else {
                                     return true;
                                 }
@@ -325,7 +325,7 @@
                 $("#sdReport").html(data.sdReport);
                 $("#ciReport").html(data.ciReport);
                 $("#pdReport").html(data.pdReport);
-                
+
                 $("#results").removeClass('d-none')
                 $('html, body').animate({
                     scrollTop: $("#results").offset().top

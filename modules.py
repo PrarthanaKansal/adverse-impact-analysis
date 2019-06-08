@@ -98,24 +98,24 @@ def StandardDevReport(minoritySelected, majoritySelected, minority, majority):
         print("SD is :")
         print(sd)
         if sd < 2:
-            print("No significance in SD")
+            return "No significance in SD"
         else:
-            print("Significantly biased")
+            return "Significantly biased"
     else:
-        print("Standard Deviation report : NaN")
+        return "NaN"
 
 #StandardDevReport(minoritySelected, majoritySelected, minority, majority)
 
 def is_CI(lb,ub, ratio):
 
     if(ratio >= lb and ratio <= ub):
-        print("desperate impact not found")
+        return "desperate impact not found"
     else:
-        print("desperate impact found")
+        return "desperate impact found"
 pass
 
 
-def ConfidenceInterval(majority,majoritySelected,minority,minoritySelected):
+def ConfidenceInterval(minoritySelected, majoritySelected, minority, majority):
 
     sd = SD(minoritySelected, majoritySelected, minority, majority)
     r = minoritySelected
@@ -130,7 +130,8 @@ def ConfidenceInterval(majority,majoritySelected,minority,minoritySelected):
 
     print("lower bound is", lb)
     print("upper bound is", ub)
-    is_CI(lb,ub, ratio)
+    answer = is_CI(lb,ub, ratio)
+    return answer
 pass
 
 #ConfidenceInterval(majority,majoritySelected,minority,minoritySelected)
@@ -140,9 +141,9 @@ def displayPD(mino, maj, minority, majority,x):
         #print("rate of female applicants" + "{}/{}".format(i,minority))
         #print("rate of male applicants" + "{}/{}".format(x-i,majority))
         if i == x:
-            print("Adverse impact against minority : YES")
+            return "Adverse impact against minority : YES"
         else:
-            print("Adverse impact against minority : NO")
+            return "Adverse impact against minority : NO"
 #probability not shown yet
 
 def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majority):
@@ -155,12 +156,15 @@ def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majori
             maj2 = maj+1
             if adverseImpact(mino, maj2, minority, majority) > 0.8:
                 print("found")
-                displayPD(mino, maj, minority, majority, x)
-            #else:
-                #print("not found")
-        #else:
-            #print("not found")
+                answer = displayPD(mino, maj, minority, majority, x)
 
+    return answer
+
+def chiSquareOrFisherExact(minoritySelected, majoritySelected, minority, majority):
+    if(minoritySelected < 5 or majoritySelected < 5):
+        return fisherexact(minoritySelected, majoritySelected, minority, majority)
+    else:
+        return chiSquare(minoritySelected, majoritySelected, minority, majority)
 #check comments and pass before running
 
 def calling(minoritySelected, majoritySelected, minority, majority):
@@ -199,13 +203,13 @@ def calling1(minoritySelected, majoritySelected, minority, majority):
 def phatahuacode():
     temp=5
     while(temp>0):
-        
+
         # white
         # whiteSelected
         # black
         # blackSelected
         # hispanic
-        # hispanicSelected 
+        # hispanicSelected
         # hawaiian
         # hawaiianSelected
         # asian
@@ -305,7 +309,7 @@ def phatahuacode():
         print()
         print()
 
-        
+
         temp=temp-1
         print("############################################")
 

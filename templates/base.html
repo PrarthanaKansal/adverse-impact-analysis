@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <title>Adverse Impact Analysis</title>
+    </head>
+    <body style="background: black; font-family: 'Montserrat', sans-serif;">
+        
+        <div class="container text-white">
+            <h1 class="text-danger text-center my-5">
+                Adverse Impact Analysis
+            </h1>
+            <h5 class="text-left mt-5 mb-3 text-success">Enter the Data</h5>
+            <form>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Whites</label>
+                        <input type="number" class="form-control" id="totalWhites" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Whites selected</label>
+                        <input type="number" class="form-control" id="selectedWhites" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Whites</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Blacks/Africans</label>
+                        <input type="number" class="form-control" id="totalBlacks" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Blacks/Africans selected</label>
+                        <input type="number" class="form-control" id="selectedBlacks" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Blacks/Africans</small>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Hispanic/Latinos</label>
+                        <input type="number" class="form-control" id="totalHispanics" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Hispanic/Latinos selected</label>
+                        <input type="number" class="form-control" id="selectedHispanics" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Hispanic/Latinos</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Native Hawaiians</label>
+                        <input type="number" class="form-control" id="totalHawaiians" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Native Hawaiians selected</label>
+                        <input type="number" class="form-control" id="selectedHawaiians" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Native Hawaiians</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Asians</label>
+                        <input type="number" class="form-control" id="totalAsians" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Asians selected</label>
+                        <input type="number" class="form-control" id="selectedAsians" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Asians</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Native Americans or Alaska Natives</label>
+                        <input type="number" class="form-control" id="totalAmericans" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Native Americans or Alaska Natives selected</label>
+                        <input type="number" class="form-control" id="selectedAmericans" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Native Americans or Alaska Natives</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Two/More Races</label>
+                        <input type="number" class="form-control" id="totalTows" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Two/More Races selected</label>
+                        <input type="number" class="form-control" id="selectedTows" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Two/More Races</small>
+                    </div>
+                </div>
+                <h5 class="text-left mt-4 mb-3 text-success">Select Benchmark Group</h5>                
+                <div class="form-check p-0" id="benchmark-form">
+                    <div class="row">
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark" id="checkWhite" value="1">
+                            <label class="form-check-label" for="checkWhite">White</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark" id="checkBlack" value="2">
+                            <label class="form-check-label" for="checkBlack">Black/Africans</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark" id="checkHispanic" value="3">
+                            <label class="form-check-label" for="checkHispanic">Hispanic/Latinos</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark" id="checkHawaiian" value="4">
+                            <label class="form-check-label" for="checkHawaiian">Native Hawaiian</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark" id="checkAsian" value="5">
+                            <label class="form-check-label" for="checkAsian">Asian</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark" id="checkAmerican" value="6">
+                            <label class="form-check-label" for="checkAmerican">Native American/Alaska Native</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark" id="checkTwo" value="7">
+                            <label class="form-check-label" for="checkTwo">Two or more races</label>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="text-left mt-4 mb-3 text-success">Select Protected Group</h5>                
+                <div class="form-check p-0" id="protected-form">
+                    <div class="row">
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected" id="checkWhiteP" value="1">
+                            <label class="form-check-label" for="checkWhiteP">White</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected" id="checkBlackP" value="2">
+                            <label class="form-check-label" for="checkBlackP">Black/Africans</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected" id="checkHispanicP" value="3">
+                            <label class="form-check-label" for="checkHispanicP">Hispanic/Latinos</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected" id="checkHawaiianP" value="4">
+                            <label class="form-check-label" for="checkHawaiianP">Native Hawaiian</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected" id="checkAsianP" value="5">
+                            <label class="form-check-label" for="checkAsianP">Asian</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected" id="checkAmericanP" value="6">
+                            <label class="form-check-label" for="checkAmericanP">Native American/Alaska Native</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected" id="checkTwoP" value="7">
+                            <label class="form-check-label" for="checkTwoP">Two or more races</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-primary btn-lg mt-4 mb-5 w-50" onclick="compute(event);">Compute</button>
+                    </div>
+                </div>
+                <div class="row mb-5 d-none" id="results">
+                    <div class="col">
+                        <h2 class="text-danger text-center">Results</h2>
+                        <h5 class="text-left mt-3 text-success">Adverse-Impact Report: <span class="text-white" id="aiReport">00.00</span></h5>  
+                        <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReport">00.00</span></h5>  
+                        <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReport">00.00</span></h5>  
+                        <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReport">00.00</span></h5>  
+                        <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReport">00.00</span></h5>  
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        
+        <script type="text/javascript">
+            
+            var sendData = null;
+            
+            function compute(e) {
+                
+                e.preventDefault();
+                $("#results").addClass('d-none');
+
+                if(checkInputs()) {
+                    $.ajax({
+                        method: 'POST',
+                        url: "/api/compute", 
+                        beforeSend: function() {
+                            
+                            var totalWhites = $("#totalWhites").val() == "" ? 0 : $("#totalWhites").val();
+                            var selectedWhites = $("#selectedWhites").val() == "" ? 0 : $("#selectedWhites").val();
+
+                            var totalBlacks = $("#totalBlacks").val() == "" ? 0 : $("#totalBlacks").val();
+                            var selectedBlacks = $("#selectedBlacks").val() == "" ? 0 : $("#selectedBlacks").val();
+
+                            var totalHispanics = $("#totalHispanics").val() == "" ? 0 : $("#totalHispanics").val();
+                            var selectedHispanics = $("#selectedHispanics").val() == "" ? 0 : $("#selectedHispanics").val();
+
+                            var totalHawaiians = $("#totalHawaiians").val() == "" ? 0 : $("#totalHawaiians").val();
+                            var selectedHawaiians = $("#selectedHawaiians").val() == "" ? 0 : $("#selectedHawaiians").val();
+
+                            var totalAsians = $("#totalAsians").val() == "" ? 0 : $("#totalAsians").val();
+                            var selectedAsians = $("#selectedAsians").val() == "" ? 0 : $("#selectedAsians").val();
+
+                            var totalAmericans = $("#totalAmericans").val() == "" ? 0 : $("#totalAmericans").val();
+                            var selectedAmericans = $("#selectedAmericans").val() == "" ? 0 : $("#selectedAmericans").val();
+
+                            var totalTows = $("#totalTows").val() == "" ? 0 : $("#totalTows").val();
+                            var selectedTows = $("#selectedTows").val() == "" ? 0 : $("#selectedTows").val();
+
+                            var benchmarkId = $('input[name=benchmark]:checked', '#benchmark-form').val();
+                            var protectedId = $('input[name=protected]:checked', '#protected-form').val();
+
+                            sendData = {
+                                "tw": totalWhites,
+                                "sw": selectedWhites,
+                                "tb": totalBlacks,
+                                "sb": selectedBlacks,
+                                "thi": totalHispanics,
+                                "shi": selectedHispanics,
+                                "tha": totalHawaiians,
+                                "sha": selectedHawaiians,
+                                "tas": totalAsians,
+                                "sas": selectedAsians,
+                                "tam": totalAmericans,
+                                "sam": selectedAmericans,
+                                "tt": totalTows,
+                                "st": selectedTows,
+                                "bid": benchmarkId,
+                                "pid": protectedId,
+                            }
+
+                        },
+                        data: sendData,
+                        success: function(result){
+                            
+                            if(result['error']) {
+                                compute(e);
+                            }
+                            else{
+                                populateData(result);
+                            }
+
+                        }
+                    });
+                }
+
+            }
+
+            function checkInputs() {
+                
+                var totalWhites = $("#totalWhites").val();
+                var selectedWhites = $("#selectedWhites").val();
+
+                var totalBlacks = $("#totalBlacks").val();
+                var selectedBlacks = $("#selectedBlacks").val();
+
+                var totalHispanics = $("#totalHispanics").val();
+                var selectedHispanics = $("#selectedHispanics").val();
+
+                var totalHawaiians = $("#totalHawaiians").val();
+                var selectedHawaiians = $("#selectedHawaiians").val();
+
+                var totalAsians = $("#totalAsians").val();
+                var selectedAsians = $("#selectedAsians").val();
+
+                var totalAmericans = $("#totalAmericans").val();
+                var selectedAmericans = $("#selectedAmericans").val();
+
+                var totalTows = $("#totalTows").val();
+                var selectedTows = $("#selectedTows").val();
+                
+                if(totalWhites >= 0 && totalBlacks >= 0 && totalHispanics >= 0 && totalHawaiians >= 0 && totalAsians >= 0 && totalAmericans >= 0 && totalTows >= 0) {
+                    if(selectedWhites >= 0 && selectedBlacks >= 0 && selectedHispanics >= 0 && selectedHawaiians >= 0 && selectedAsians >= 0 && selectedAmericans >= 0 && selectedTows >= 0) {
+                        if(selectedWhites <= totalWhites && selectedBlacks <= totalBlacks && selectedHispanics <= totalHispanics && selectedHawaiians <= totalHawaiians && selectedAsians <= totalAsians && selectedAmericans <= totalAmericans && selectedTows <= totalTows) {
+                            if($('input[name=benchmark]:checked', '#benchmark-form').val() === undefined) {
+                                alert("Select a Benchmark group");
+                                return false;
+                            }
+                            else {
+                                if($('input[name=protected]:checked', '#protected-form').val() === undefined) {
+                                    alert("Select a Protected group");
+                                    return false;
+                                } 
+                                else {
+                                    return true;
+                                }
+                            }
+                        }
+                        else {
+                            alert("Selected Value Must be <= Total Value")
+                            return false;
+                        }
+                    }
+                    else {
+                        alert("Selected Value Must be >= 0")
+                        return false;
+                    }
+                }
+                else{
+                    alert("Total Value Must be >= 0")
+                    return false;
+                }
+                return true;
+            }
+
+            function populateData(data) {
+                $("#aiReport").html(data.aiReport);
+                $("#csReport").html(data.csReport);
+                $("#sdReport").html(data.sdReport);
+                $("#ciReport").html(data.ciReport);
+                $("#pdReport").html(data.pdReport);
+                
+                $("#results").removeClass('d-none')
+                $('html, body').animate({
+                    scrollTop: $("#results").offset().top
+                }, 1000);
+            }
+
+        </script>
+
+    </body>
+</html>

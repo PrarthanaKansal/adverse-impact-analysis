@@ -191,6 +191,7 @@
 
             var sendData = null;
 
+
             function compute(e) {
 
                 e.preventDefault();
@@ -264,26 +265,30 @@
 
             function checkInputs() {
 
-                var totalWhites = $("#totalWhites").val();
-                var selectedWhites = $("#selectedWhites").val();
+              //  var totalWhites = $("#totalWhites").val();
+              //  var selectedWhites = $("#selectedWhites").val();
 
-                var totalBlacks = $("#totalBlacks").val();
-                var selectedBlacks = $("#selectedBlacks").val();
+              var totalWhites = parseInt($("#totalWhites").val()== "" ? 0 : $("#totalWhites").val(),10);
+              var selectedWhites = parseInt($("#selectedWhites").val()== "" ? 0 : $("#selectedWhites").val(),10);
+              //console.log(totalWhites+selectedWhites);
 
-                var totalHispanics = $("#totalHispanics").val();
-                var selectedHispanics = $("#selectedHispanics").val();
+                var totalBlacks = parseInt($("#totalBlacks").val()== "" ? 0 : $("#totalBlacks").val(),10);
+                var selectedBlacks = parseInt($("#selectedBlacks").val()== "" ? 0 : $("#selectedBlacks").val(),10);
 
-                var totalHawaiians = $("#totalHawaiians").val();
-                var selectedHawaiians = $("#selectedHawaiians").val();
+                var totalHispanics = parseInt($("#totalHispanics").val()== "" ? 0 : $("#totalHispanics").val(),10);
+                var selectedHispanics = parseInt($("#selectedHispanics").val()== "" ? 0 : $("#selectedHispanics").val(),10);
 
-                var totalAsians = $("#totalAsians").val();
-                var selectedAsians = $("#selectedAsians").val();
+                var totalHawaiians = parseInt($("#totalHawaiians").val()== "" ? 0 : $("#totalHawaiians").val(),10);
+                var selectedHawaiians = parseInt($("#selectedHawaiians").val()== "" ? 0 : $("#selectedHawaiians").val(),10);
 
-                var totalAmericans = $("#totalAmericans").val();
-                var selectedAmericans = $("#selectedAmericans").val();
+                var totalAsians = parseInt($("#totalAsians").val()== "" ? 0 : $("#totalAsians").val(),10);
+                var selectedAsians = parseInt($("#selectedAsians").val()== "" ? 0 : $("#selectedAsians").val(),10);
 
-                var totalTows = $("#totalTows").val();
-                var selectedTows = $("#selectedTows").val();
+                var totalAmericans = parseInt($("#totalAmericans").val()== "" ? 0 : $("#totalAmericans").val(),10);
+                var selectedAmericans = parseInt($("#selectedAmericans").val()== "" ? 0 : $("#selectedAmericans").val(),10);
+
+                var totalTows = parseInt($("#totalTows").val()== "" ? 0 : $("#totalTows").val(),10);
+                var selectedTows = parseInt($("#selectedTows").val()== "" ? 0 : $("#selectedTows").val(),10);
 
                 if(totalWhites >= 0 && totalBlacks >= 0 && totalHispanics >= 0 && totalHawaiians >= 0 && totalAsians >= 0 && totalAmericans >= 0 && totalTows >= 0) {
                     if(selectedWhites >= 0 && selectedBlacks >= 0 && selectedHispanics >= 0 && selectedHawaiians >= 0 && selectedAsians >= 0 && selectedAmericans >= 0 && selectedTows >= 0) {

@@ -1,4 +1,6 @@
+from __future__ import division
 import math
+
 
 #working
 def adverseImpact(minoritySelected, majoritySelected, minority, majority):
@@ -32,26 +34,27 @@ def chiSquare(minoritySelected, majoritySelected, minority, majority):
     majorityNotSelected = majority - majoritySelected  # b
     N = majority + minority  # majoritySelected a
     # minoritySelected c
+    answer = ''
     if minorityNotSelected and majorityNotSelected >0 :
         chiSquare = (((((majoritySelected * minorityNotSelected) - (majorityNotSelected * minoritySelected)) * (
                     (majoritySelected * minorityNotSelected) - (majorityNotSelected * minoritySelected))) * N) / (
                                  (majoritySelected + majorityNotSelected) * (minoritySelected + minorityNotSelected) * (
                                      majorityNotSelected + minorityNotSelected) * (majoritySelected + minoritySelected)))
-        print('Value for ChiSquare: ' + str(chiSquare))
+        answer = 'Value for ChiSquare: ' + str(chiSquare)
 
         if (chiSquare < 3.841):
-            print("The value of the statistic is less than 3.841")
-            print("Absence of bias with 95% chance")
+            answer = answer + "\n The value of the statistic is less than 3.841"
+            answer = answer + "\n Absence of bias with 95% chance"
         else:
             if chiSquare > 6.6635:
-                print("Bias with 99% chance")
+                answer = answer + "\n Bias with 99% chance"
             elif (chiSquare > 3.841 and chiSquare < 6.635):
-                print("Bias with 95% chance")
+                answer = answer + "\n Bias with 95% chance"
     else:
-        print("chi square : NaN")
-        print("Absence of bias")
+        answer = answer + "\n chi square : NaN"
+        answer = answer + "\n Absence of bias"
 
-
+    return answer
 pass
 
 # chiSquare(minoritySelected, majoritySelected, minority, majority)
@@ -91,27 +94,28 @@ def StandardDevReport(minoritySelected, majoritySelected, minority, majority):
     p = minority / n2
     n1 = minoritySelected + majoritySelected
     r = minoritySelected
+    answer = ''
     #check
     if (y>0):
         sd = ((r/n1)-p)/y
         #conditioned
-        print("SD is :")
-        print(sd)
-        if sd < 2:
-            return "No significance in SD"
-        else:
-            return "Significantly biased"
-    else:
-        return "NaN"
+        answer = "Standard Deviation is " + str(sd)
 
+        if sd < 2:
+            answer = answer + "\n No significance in SD"
+        else:
+            answer = answer + "\n Significantly biased"
+    else:
+        answer = answer + "\n NaN"
+    return answer
 #StandardDevReport(minoritySelected, majoritySelected, minority, majority)
 
 def is_CI(lb,ub, ratio):
 
     if(ratio >= lb and ratio <= ub):
-        return "desperate impact not found"
+        return "Desperate Impact not found"
     else:
-        return "desperate impact found"
+        return "Desperate Impact found"
 pass
 
 
@@ -128,22 +132,24 @@ def ConfidenceInterval(minoritySelected, majoritySelected, minority, majority):
     lb = p - (1.96 * sd)
     ub = p + (1.96 * sd)
 
-    print("lower bound is", lb)
-    print("upper bound is", ub)
-    answer = is_CI(lb,ub, ratio)
+    answer = "lower bound is "+  str(lb)
+    answer = answer + "\n upper bound is " + str(ub) + "\n"
+    answer = answer +  is_CI(lb,ub, ratio)
     return answer
 pass
 
 #ConfidenceInterval(majority,majoritySelected,minority,minoritySelected)
 def displayPD(mino, maj, minority, majority,x):
-    print("in loop")
+    #print("in loop")
+    answer = ""
     for i in range(x-2,x+2):
         #print("rate of female applicants" + "{}/{}".format(i,minority))
         #print("rate of male applicants" + "{}/{}".format(x-i,majority))
         if i == x:
-            return "Adverse impact against minority : YES"
+            answer =  "Adverse impact against minority : YES"
         else:
-            return "Adverse impact against minority : NO"
+            answer =  "Adverse impact against minority : NO"
+    return answer
 #probability not shown yet
 
 def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majority):
@@ -162,9 +168,10 @@ def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majori
 
 def chiSquareOrFisherExact(minoritySelected, majoritySelected, minority, majority):
     if(minoritySelected < 5 or majoritySelected < 5):
-        return fisherexact(minoritySelected, majoritySelected, minority, majority)
+        answer=  fisherexact(minoritySelected, majoritySelected, minority, majority)
     else:
-        return chiSquare(minoritySelected, majoritySelected, minority, majority)
+        answer =  chiSquare(minoritySelected, majoritySelected, minority, majority)
+    return answer
 #check comments and pass before running
 
 def calling(minoritySelected, majoritySelected, minority, majority):
@@ -199,119 +206,6 @@ def calling1(minoritySelected, majoritySelected, minority, majority):
     ConfidenceInterval(majority, majoritySelected, minority, minoritySelected)
     print()
     ProbabilityDistribution(minoritySelected, majoritySelected, minority, majority)
-
-def phatahuacode():
-    temp=5
-    while(temp>0):
-
-        # white
-        # whiteSelected
-        # black
-        # blackSelected
-        # hispanic
-        # hispanicSelected
-        # hawaiian
-        # hawaiianSelected
-        # asian
-        # asianSelected
-        # alaska
-        # alaskaSelected
-        # tom
-        # tomSelected
-
-        print()
-        print()
-        print()
-        print("Enter the number of race which is MAJORITY:")
-        print("1. White")
-        print("2. Black/Africans")
-        print("3. Hispanic/Latinos")
-        print("4. Native Hawaiian")
-        print("5. Asian")
-        print("6. Native American/Alaska Native")
-        print("7. Two or More Races")
-        majority=0
-        inputMaj= takeInput()
-        if(inputMaj == 1):
-            majority=white
-            majoritySelected=whiteSelected
-            print("majority: White")
-        elif(inputMaj == 2):
-            majority=black
-            majoritySelected=blackSelected
-            print("majority: Blacks")
-        elif(inputMaj == 3):
-            majority=hispanic
-            majoritySelected=hispanicSelected
-            print("majority: Hispanic/Latinos")
-        elif(inputMaj == 4):
-            majority=hawaiian
-            majoritySelected=hawaiianSelected
-            print("majority: Native Hawaiian")
-        elif(inputMaj == 5):
-            majority=asian
-            majoritySelected=asianSelected
-            print("majority: Asian")
-        elif(inputMaj == 6):
-            majority=alaska
-            majoritySelected=alaskaSelected
-            print("majority: Native American/Alaska Native")
-        elif(inputMaj == 7):
-            majority=tom
-            majoritySelected=tomSelected
-            print("majority: Two/More Races")
-        else:
-            print("Invalid Input")
-
-        print()
-        print()
-        print("Enter the number of race which is MINORITY:")
-        print("1. White")
-        print("2. Black/Africans")
-        print("3. Hispanic/Latinos")
-        print("4. Native Hawaiian")
-        print("5. Asian")
-        print("6. Native American/Alaska Native")
-        print("7. Two or More Races")
-        minority=0
-        inputMin= takeInput()
-        if(inputMin == 1):
-            minority=white
-            minoritySelected=whiteSelected
-            print("minority: White")
-        elif(inputMin == 2):
-            minority=black
-            minoritySelected=blackSelected
-            print("minority: Blakcs")
-        elif(inputMin == 3):
-            minority=hispanic
-            minoritySelected=hispanicSelected
-            print("minority: Hispanic/Latinos")
-        elif(inputMin == 4):
-            minority=hawaiian
-            minoritySelected=hispanicSelected
-            print("minority: Hawaiian")
-        elif(inputMin == 5):
-            minority=asian
-            minoritySelected=asianSelected
-            print("minority: Asian")
-        elif(inputMin == 6):
-            minority=alaska
-            minoritySelected=alaskaSelected
-            print("minority: Native American/Alaska Native")
-        elif(inputMin == 7):
-            minority=tom
-            minoritySelected=tomSelected
-            print("minority: Two/More Races")
-        else:
-            print("Invalid Input")
-
-        print()
-        print()
-
-
-        temp=temp-1
-        print("############################################")
 
 def computeData(s):
     print(s)

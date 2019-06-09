@@ -41,7 +41,7 @@ def chiSquare(minoritySelected, majoritySelected, minority, majority):
                                  (majoritySelected + majorityNotSelected) * (minoritySelected + minorityNotSelected) * (
                                      majorityNotSelected + minorityNotSelected) * (majoritySelected + minoritySelected)))
         answer = 'Value for ChiSquare: ' + str(chiSquare)
-
+        print(chiSquare)
         if (chiSquare < 3.841):
             answer = answer + "\n The value of the statistic is less than 3.841"
             answer = answer + "\n Absence of bias with 95% chance"
@@ -139,32 +139,44 @@ def ConfidenceInterval(minoritySelected, majoritySelected, minority, majority):
 pass
 
 #ConfidenceInterval(majority,majoritySelected,minority,minoritySelected)
-def displayPD(mino, maj, minority, majority,x):
-    #print("in loop")
-    answer = ""
-    for i in range(x-2,x+2):
-        #print("rate of female applicants" + "{}/{}".format(i,minority))
-        #print("rate of male applicants" + "{}/{}".format(x-i,majority))
-        if i == x:
-            answer =  "Adverse impact against minority : YES"
-        else:
-            answer =  "Adverse impact against minority : NO"
-    return answer
-#probability not shown yet
-
 def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majority):
-    total = min(minority,majority)
-    for x in range(total+1):
-        mino = x
-        maj = total - x
-        print(adverseImpact(mino, maj, minority, majority))
-        if adverseImpact(mino, maj, minority, majority) < 0.8:
-            maj2 = maj+1
-            if adverseImpact(mino, maj2, minority, majority) > 0.8:
-                print("found")
-                answer = displayPD(mino, maj, minority, majority, x)
+	total = minoritySelected + majoritySelected
 
-    return answer
+	for val in range(0,total+1):
+
+		if((minoritySelected+majoritySelected) <= majority):
+			mino = val
+			majo = total - val
+
+			#print(mino + '  ' + majo)
+			if( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+                #answer = ''
+				answer = 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority: '+ 'YES'
+				answer = answer + ' Probability: '+ str(mino/minority)
+				return answer
+			elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+                #answer = ''
+				answer = 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority: '+ 'NO'
+				answer = answer + ' Probability: '+ str(mino/minority)
+				return answer
+
+		elif((minoritySelected+majoritySelected) > majority):
+
+			mino = (minoritySelected+majoritySelected) - majority
+			majo = majority - val
+			#print(str(mino) + '  ' + str(majo))
+			if( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+                #answer = ''
+				answer =  'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority: '+ 'YES'
+				answer = answer + ' Probability: '+ str(mino/minority)
+				return answer
+			elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+                #answer = ''
+				answer =  answer +'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority: '+ 'NO'
+				answer = answer + ' Probability: '+ str(mino/minority)
+				return answer
+        return "NaN"
+
 
 def chiSquareOrFisherExact(minoritySelected, majoritySelected, minority, majority):
     if(minoritySelected < 5 or majoritySelected < 5):

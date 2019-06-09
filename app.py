@@ -309,7 +309,7 @@ def compute():
         'csReport' : csReport,
         'sdReport' : sdReport,
         'ciReport' : ciReport,
-        '#pdReport' : pdReport,
+        'pdReport' : pdReport,
     })
 
 if(__name__ == "__main__"):

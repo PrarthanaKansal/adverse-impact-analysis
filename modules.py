@@ -175,7 +175,7 @@ def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majori
 				answer =  answer +'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority: '+ 'NO'
 				answer = answer + ' Probability: '+ str(mino/minority)
 				return answer
-        return "NaN"
+        #return "NaN"
 
 
 def chiSquareOrFisherExact(minoritySelected, majoritySelected, minority, majority):

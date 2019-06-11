@@ -331,7 +331,7 @@
                 // console.log(checkInputs());
                 // console.log(checkGenderInputs());
                 // console.log(checkAgeInputs());
-                if(checkInputs() || checkAgeInputs() || checkGenderInputs()) {
+                if(temporaryInputCheck()) {
                     $.ajax({
                         method: 'POST',
                         url: "/api/compute",
@@ -384,9 +384,9 @@
                             var benchmarkIdAge = $('input[name=benchmark-age]:checked', '#benchmark-form-age').val();
                             var protectedIdAge = $('input[name=protected-age]:checked', '#protected-form-age').val();
                             //
-                            var calculateRace = 1;
-                            var calculateAge = 1;
-                            var calculateGender = 1;
+                            var calculateRace = 0;
+                            var calculateAge = 0;
+                            var calculateGender = 0;
 
 
 

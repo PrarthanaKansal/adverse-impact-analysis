@@ -172,7 +172,7 @@ def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majori
 				return answer
 			elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
                 #answer = ''
-				answer =  answer +'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority: '+ 'NO'
+				answer =  'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority: '+ 'NO'
 				answer = answer + ' Probability: '+ str(mino/minority)
 				return answer
         #return "NaN"

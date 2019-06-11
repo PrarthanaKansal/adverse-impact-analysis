@@ -14,6 +14,7 @@
                 Adverse Impact Analysis
             </h1>
             <h5 class="text-left mt-5 mb-3 text-success">Enter the Data</h5>
+            <h5 class="text-center mt-2 mb-3 text-warning">RACE</h5>
             <form>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
@@ -29,12 +30,12 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
-                        <label>Total number of Blacks/Africans</label>
+                        <label>Total number of Blacks/African Americans</label>
                         <input type="number" class="form-control" id="totalBlacks" placeholder="">
                         <small class="form-text text-muted">Integer Value >= 0</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
-                        <label>Number of Blacks/Africans selected</label>
+                        <label>Number of Blacks/African Americans selected</label>
                         <input type="number" class="form-control" id="selectedBlacks" placeholder="">
                         <small class="form-text text-muted">Integer Value <= Total Number of Blacks/Africans</small>
                     </div>
@@ -108,7 +109,7 @@
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="radio" name="benchmark" id="checkBlack" value="2">
-                            <label class="form-check-label" for="checkBlack">Black/Africans</label>
+                            <label class="form-check-label" for="checkBlack">Black/African American</label>
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="radio" name="benchmark" id="checkHispanic" value="3">
@@ -141,7 +142,7 @@
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="radio" name="protected" id="checkBlackP" value="2">
-                            <label class="form-check-label" for="checkBlackP">Black/Africans</label>
+                            <label class="form-check-label" for="checkBlackP">Black/African American</label>
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="radio" name="protected" id="checkHispanicP" value="3">
@@ -165,6 +166,137 @@
                         </div>
                     </div>
                 </div>
+
+
+                <h5 class="text-center mt-2 mb-3 text-warning">GENDER</h5>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Males</label>
+                        <input type="number" class="form-control" id="totalMales" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Males selected</label>
+                        <input type="number" class="form-control" id="selectedMales" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Males</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of Females</label>
+                        <input type="number" class="form-control" id="totalFemales" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of Females selected</label>
+                        <input type="number" class="form-control" id="selectedFemales" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Females</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of People identifying as Others</label>
+                        <input type="number" class="form-control" id="totalOthers" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of People identifying as Others selected</label>
+                        <input type="number" class="form-control" id="selectedOthers" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of Others</small>
+                    </div>
+                </div>
+                <h5 class="text-left mt-4 mb-3 text-success">Select Benchmark Group</h5>
+                <div class="form-check p-0" id="benchmark-form-gender">
+                    <div class="row">
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark-gender" id="checkMaleB" value="1">
+                            <label class="form-check-label" for="checkMaleB">Male</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark-gender" id="checkFemaleB" value="2">
+                            <label class="form-check-label" for="checkFemaleB">Female</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark-gender" id="checkOtherB" value="3">
+                            <label class="form-check-label" for="checkOtherB">Other</label>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="text-left mt-4 mb-3 text-success">Select Protected Group</h5>
+                <div class="form-check p-0" id="protected-form-gender">
+                    <div class="row">
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected-gender" id="checkMaleP" value="1">
+                            <label class="form-check-label" for="checkMaleP">Male</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected-gender" id="checkFemaleP" value="2">
+                            <label class="form-check-label" for="checkFemaleP">Female</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected-gender" id="checkOtherP" value="3">
+                            <label class="form-check-label" for="checkOtherP">Other</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <h5 class="text-center mt-2 mb-3 text-warning">AGE</h5>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of People younger than or equal to 40 years of age</label>
+                        <input type="number" class="form-control" id="totalYounger" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of People younger than or equal to 40 selected</label>
+                        <input type="number" class="form-control" id="selectedYounger" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of People younger than 40</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Total number of People older than 40</label>
+                        <input type="number" class="form-control" id="totalOld" placeholder="">
+                        <small class="form-text text-muted">Integer Value >= 0</small>
+                    </div>
+                    <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                        <label>Number of People older than 40 selected</label>
+                        <input type="number" class="form-control" id="selectedOld" placeholder="">
+                        <small class="form-text text-muted">Integer Value <= Total Number of People older than 40</small>
+                    </div>
+                </div>
+
+                <h5 class="text-left mt-4 mb-3 text-success">Select Benchmark Group</h5>
+                <div class="form-check p-0" id="benchmark-form-age">
+                    <div class="row">
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark-age" id="checkYoungB" value="1">
+                            <label class="form-check-label" for="checkYoungB">Younger People</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="benchmark-age" id="checkOldB" value="2">
+                            <label class="form-check-label" for="checkoldB">Older People</label>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="text-left mt-4 mb-3 text-success">Select Protected Group</h5>
+                <div class="form-check p-0" id="protected-form-age">
+                    <div class="row">
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected-age" id="checkYoungP" value="1">
+                            <label class="form-check-label" for="checkYoungP">Younger People</label>
+                        </div>
+                        <div class="col-auto col-lg-4">
+                            <input type="radio" name="protected-age" id="checkOldP" value="2">
+                            <label class="form-check-label" for="checkOldP">Older People</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <div class="row">
                     <div class="col text-center">
                         <button type="submit" class="btn btn-primary btn-lg mt-4 mb-5 w-50" onclick="compute(event);">Compute</button>
@@ -196,8 +328,10 @@
 
                 e.preventDefault();
                 $("#results").addClass('d-none');
-
-                if(checkInputs()) {
+                // console.log(checkInputs());
+                // console.log(checkGenderInputs());
+                // console.log(checkAgeInputs());
+                if(checkInputs() || checkAgeInputs() || checkGenderInputs()) {
                     $.ajax({
                         method: 'POST',
                         url: "/api/compute",
@@ -227,6 +361,58 @@
                             var benchmarkId = $('input[name=benchmark]:checked', '#benchmark-form').val();
                             var protectedId = $('input[name=protected]:checked', '#protected-form').val();
 
+                            //GENDER
+                            var totalMales = $("#totalMales").val() == "" ? 0 : $("#totalMales").val();
+                            var selectedMales = $("#selectedMales").val() == "" ? 0 : $("#selectedMales").val();
+
+                            var totalFemales = $("#totalFemales").val() == "" ? 0 : $("#totalFemales").val();
+                            var selectedFemales = $("#selectedFemales").val() == "" ? 0 : $("#selectedFemales").val();
+
+                            var totalOthers = $("#totalOthers").val() == "" ? 0 : $("#totalOthers").val();
+                            var selectedOthers = $("#selectedOthers").val() == "" ? 0 : $("#selectedOthers").val();
+
+                            var benchmarkIdGender = $('input[name=benchmark-gender]:checked', '#benchmark-form-gender').val();
+                            var protectedIdGender = $('input[name=protected-gender]:checked', '#protected-form-gender').val();
+
+                            //AGE
+                            var totalYounger = $("#totalYounger").val() == "" ? 0 : $("#totalYounger").val();
+                            var selectedYounger = $("#selectedYounger").val() == "" ? 0 : $("#selectedYounger").val();
+
+                            var totalOld = $("#totalOld").val() == "" ? 0 : $("#totalOld").val();
+                            var selectedOld = $("#selectedOld").val() == "" ? 0 : $("#selectedOld").val();
+
+                            var benchmarkIdAge = $('input[name=benchmark-age]:checked', '#benchmark-form-age').val();
+                            var protectedIdAge = $('input[name=protected-age]:checked', '#protected-form-age').val();
+                            //
+                            var calculateRace = 1;
+                            var calculateAge = 1;
+                            var calculateGender = 1;
+
+
+
+
+                            if(checkInputs()){
+                              calculateRace = 1;
+                            }
+                            else{
+                              calculateRace = 0;
+                            }
+
+                            if(checkGenderInputs()){
+                              calculateGender = 1;
+                            }
+                            else{
+                              calculateGender = 0;
+                            }
+
+                            if(checkAgeInputs()){
+                              calculateAge = 1;
+                            }
+                            else{
+                              calculateAge = 0;
+                            }
+
+
                             sendData = {
                                 "tw": totalWhites,
                                 "sw": selectedWhites,
@@ -244,6 +430,26 @@
                                 "st": selectedTows,
                                 "bid": benchmarkId,
                                 "pid": protectedId,
+
+                                "tm": totalMales,
+                                "tf": totalFemales,
+                                "to": totalOthers,
+                                "sm": selectedMales,
+                                "sf": selectedFemales,
+                                "so": selectedOthers,
+                                "bidG": benchmarkIdGender,
+                                "pidG": protectedIdGender,
+
+                                "ty": totalYounger,
+                                "told": totalOld,
+                                "sy": selectedYounger,
+                                "sold": selectedOld,
+                                "bidA": benchmarkIdAge,
+                                "pidA": protectedIdAge,
+
+                                "calcA": calculateAge,
+                                "calcG": calculateGender,
+                                "calcR": calculateRace,
                             }
 
                         },
@@ -251,9 +457,11 @@
                         success: function(result){
 
                             if(result['error']) {
+                              console.log("error");
                                 compute(e);
                             }
                             else{
+
                                 populateData(result);
                             }
 
@@ -263,13 +471,85 @@
 
             }
 
-            function checkInputs() {
-
-              //  var totalWhites = $("#totalWhites").val();
-              //  var selectedWhites = $("#selectedWhites").val();
-
+            function temporaryInputCheck(){
               var totalWhites = parseInt($("#totalWhites").val()== "" ? 0 : $("#totalWhites").val(),10);
               var selectedWhites = parseInt($("#selectedWhites").val()== "" ? 0 : $("#selectedWhites").val(),10);
+
+              var totalBlacks = parseInt($("#totalBlacks").val()== "" ? 0 : $("#totalBlacks").val(),10);
+              var selectedBlacks = parseInt($("#selectedBlacks").val()== "" ? 0 : $("#selectedBlacks").val(),10);
+
+              var totalHispanics = parseInt($("#totalHispanics").val()== "" ? 0 : $("#totalHispanics").val(),10);
+              var selectedHispanics = parseInt($("#selectedHispanics").val()== "" ? 0 : $("#selectedHispanics").val(),10);
+
+              var totalHawaiians = parseInt($("#totalHawaiians").val()== "" ? 0 : $("#totalHawaiians").val(),10);
+              var selectedHawaiians = parseInt($("#selectedHawaiians").val()== "" ? 0 : $("#selectedHawaiians").val(),10);
+
+              var totalAsians = parseInt($("#totalAsians").val()== "" ? 0 : $("#totalAsians").val(),10);
+              var selectedAsians = parseInt($("#selectedAsians").val()== "" ? 0 : $("#selectedAsians").val(),10);
+
+              var totalAmericans = parseInt($("#totalAmericans").val()== "" ? 0 : $("#totalAmericans").val(),10);
+              var selectedAmericans = parseInt($("#selectedAmericans").val()== "" ? 0 : $("#selectedAmericans").val(),10);
+
+              var totalTows = parseInt($("#totalTows").val()== "" ? 0 : $("#totalTows").val(),10);
+              var selectedTows = parseInt($("#selectedTows").val()== "" ? 0 : $("#selectedTows").val(),10);
+
+              var totalMales = parseInt($("#totalMales").val()== "" ? 0 : $("#totalMales").val(),10);
+              var selectedMales = parseInt($("#selectedMales").val()== "" ? 0 : $("#selectedMales").val(),10);
+
+              var totalFemales = parseInt($("#totalFemales").val()== "" ? 0 : $("#totalFemales").val(),10);
+              var selectedFemales = parseInt($("#selectedFemales").val()== "" ? 0 : $("#selectedFemales").val(),10);
+
+              var totalOthers = parseInt($("#totalOthers").val()== "" ? 0 : $("#totalOthers").val(),10);
+              var selectedOthers = parseInt($("#selectedOthers").val()== "" ? 0 : $("#selectedOthers").val(),10);
+
+              var totalOld = parseInt($("#totalOld").val()== "" ? 0 : $("#totalOld").val(),10);
+              var selectedOld = parseInt($("#selectedOld").val()== "" ? 0 : $("#selectedOld").val(),10);
+
+              var totalYounger = parseInt($("#totalYounger").val()== "" ? 0 : $("#totalYounger").val(),10);
+              var selectedYounger = parseInt($("#selectedYounger").val()== "" ? 0 : $("#selectedYounger").val(),10);
+
+              if(totalOld >= 0 && totalYounger >= 0  && totalMales >= 0 && totalFemales >= 0 && totalOthers >= 0 && totalWhites >= 0 && totalBlacks >= 0 && totalHispanics >= 0 && totalHawaiians >= 0 && totalAsians >= 0 && totalAmericans >= 0 && totalTows >= 0) {
+                  if(selectedOld >= 0 && selectedYounger >= 0 && selectedMales >= 0 && selectedFemales >= 0 && selectedOthers >= 0 && selectedWhites >= 0 && selectedBlacks >= 0 && selectedHispanics >= 0 && selectedHawaiians >= 0 && selectedAsians >= 0 && selectedAmericans >= 0 && selectedTows >= 0) {
+                      if(selectedOld <= totalOld && selectedYounger <= totalYounger && selectedMales <= totalMales && selectedFemales <= totalFemales && selectedOthers <= totalOthers && selectedWhites <= totalWhites && selectedBlacks <= totalBlacks && selectedHispanics <= totalHispanics && selectedHawaiians <= totalHawaiians && selectedAsians <= totalAsians && selectedAmericans <= totalAmericans && selectedTows <= totalTows) {
+                          if($('input[name=benchmark]:checked', '#benchmark-form').val() === undefined ||
+                        $('input[name=benchmark-gender]:checked', '#benchmark-form-gender').val() === undefined ||
+                      $('input[name=benchmark-age]:checked', '#benchmark-form-age').val() === undefined ) {
+                             alert("Select a Benchmark group");
+                              return false;
+                          }
+                          else {
+                              if($('input[name=protected]:checked', '#protected-form').val() === undefined ||
+                            $('input[name=protected-gender]:checked', '#protected-form-gender').val() === undefined ||
+                          $('input[name=protected-age]:checked', '#protected-form-age').val() === undefined) {
+                                  alert("Select a Protected group");
+                                  return false;
+                              }
+                              else {
+                                  return true;
+                              }
+                          }
+                      }
+                      else {
+                         alert("Selected Value Must be <= Total Value")
+                          return false;
+                      }
+                  }
+                  else {
+                      alert("Selected Value Must be >= 0")
+                      return false;
+                  }
+              }
+              else{
+                  alert("Total Value Must be >= 0")
+                  return false;
+              }
+              return true;
+            }
+
+            function checkInputs() {
+
+                var totalWhites = parseInt($("#totalWhites").val()== "" ? 0 : $("#totalWhites").val(),10);
+                var selectedWhites = parseInt($("#selectedWhites").val()== "" ? 0 : $("#selectedWhites").val(),10);
               //console.log(totalWhites+selectedWhites);
 
                 var totalBlacks = parseInt($("#totalBlacks").val()== "" ? 0 : $("#totalBlacks").val(),10);
@@ -294,12 +574,12 @@
                     if(selectedWhites >= 0 && selectedBlacks >= 0 && selectedHispanics >= 0 && selectedHawaiians >= 0 && selectedAsians >= 0 && selectedAmericans >= 0 && selectedTows >= 0) {
                         if(selectedWhites <= totalWhites && selectedBlacks <= totalBlacks && selectedHispanics <= totalHispanics && selectedHawaiians <= totalHawaiians && selectedAsians <= totalAsians && selectedAmericans <= totalAmericans && selectedTows <= totalTows) {
                             if($('input[name=benchmark]:checked', '#benchmark-form').val() === undefined) {
-                                alert("Select a Benchmark group");
+                            //    alert("Select a Benchmark group");
                                 return false;
                             }
                             else {
                                 if($('input[name=protected]:checked', '#protected-form').val() === undefined) {
-                                    alert("Select a Protected group");
+                                //    alert("Select a Protected group");
                                     return false;
                                 }
                                 else {
@@ -308,23 +588,112 @@
                             }
                         }
                         else {
-                            alert("Selected Value Must be <= Total Value")
+                        //    alert("Selected Value Must be <= Total Value")
                             return false;
                         }
                     }
                     else {
-                        alert("Selected Value Must be >= 0")
+                      //  alert("Selected Value Must be >= 0")
                         return false;
                     }
                 }
                 else{
-                    alert("Total Value Must be >= 0")
+                  //  alert("Total Value Must be >= 0")
                     return false;
                 }
                 return true;
             }
 
+            function checkGenderInputs(){
+              var totalMales = parseInt($("#totalMales").val()== "" ? 0 : $("#totalMales").val(),10);
+              var selectedMales = parseInt($("#selectedMales").val()== "" ? 0 : $("#selectedMales").val(),10);
+
+              var totalFemales = parseInt($("#totalFemales").val()== "" ? 0 : $("#totalFemales").val(),10);
+              var selectedFemales = parseInt($("#selectedFemales").val()== "" ? 0 : $("#selectedFemales").val(),10);
+
+              var totalOthers = parseInt($("#totalOthers").val()== "" ? 0 : $("#totalOthers").val(),10);
+              var selectedOthers = parseInt($("#selectedOthers").val()== "" ? 0 : $("#selectedOthers").val(),10);
+
+              if(totalMales >= 0 && totalFemales >= 0 && totalOthers >= 0 ) {
+                  if(selectedMales >= 0 && selectedFemales >= 0 && selectedOthers >= 0 ) {
+                      if(selectedMales <= totalMales && selectedFemales <= totalFemales && selectedOthers <= totalOthers) {
+                          if($('input[name=benchmark-gender]:checked', '#benchmark-form-gender').val() === undefined) {
+                            //  alert("Select a Benchmark group in Gender Category");
+                              return false;
+                          }
+                          else {
+                              if($('input[name=protected-gender]:checked', '#protected-form-gender').val() === undefined) {
+                              //    alert("Select a Protected group in Gender Category");
+                                  return false;
+                              }
+                              else {
+                                  return true;
+                              }
+                          }
+                      }
+                      else {
+                        //  alert("Selected Value Must be <= Total Value")
+                          return false;
+                      }
+                  }
+                  else {
+                    //  alert("Selected Value Must be >= 0")
+                      return false;
+                  }
+              }
+              else{
+              //    alert("Total Value Must be >= 0")
+                  return false;
+              }
+              return true;
+
+            }
+
+            function checkAgeInputs(){
+              var totalOld = parseInt($("#totalOld").val()== "" ? 0 : $("#totalOld").val(),10);
+              var selectedOld = parseInt($("#selectedOld").val()== "" ? 0 : $("#selectedOld").val(),10);
+
+              var totalYounger = parseInt($("#totalYounger").val()== "" ? 0 : $("#totalYounger").val(),10);
+              var selectedYounger = parseInt($("#selectedYounger").val()== "" ? 0 : $("#selectedYounger").val(),10);
+
+              if(totalOld >= 0 && totalYounger >= 0  ) {
+                  if(selectedOld >= 0 && selectedYounger >= 0  ) {
+                      if(selectedOld <= totalOld && selectedYounger <= totalYounger) {
+                          if($('input[name=benchmark-age]:checked', '#benchmark-form-age').val() === undefined) {
+                              //alert("Select a Benchmark group in Age Category");
+                              return false;
+                          }
+                          else {
+                              if($('input[name=protected-age]:checked', '#protected-form-age').val() === undefined) {
+                                  //alert("Select a Protected group in Age Category");
+                                  return false;
+                              }
+                              else {
+                                  return true;
+                              }
+                          }
+                      }
+                      else {
+                        //  alert("Selected Value Must be <= Total Value")
+                          return false;
+                      }
+                  }
+                  else {
+                    //  alert("Selected Value Must be >= 0")
+                      return false;
+                  }
+              }
+              else{
+                //  alert("Total Value Must be >= 0")
+                  return false;
+              }
+              return true;
+
+            }
+
             function populateData(data) {
+              console.log("yes");
+
                 $("#aiReport").html(data.aiReport);
                 $("#csReport").html(data.csReport);
                 $("#sdReport").html(data.sdReport);

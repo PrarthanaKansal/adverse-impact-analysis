@@ -331,55 +331,55 @@
                 // console.log(checkInputs());
                 // console.log(checkGenderInputs());
                 // console.log(checkAgeInputs());
-                if(temporaryInputCheck()) {
+                if(checkInputs() || checkGenderInputs() || checkAgeInputs()) {
                     $.ajax({
                         method: 'POST',
                         url: "/api/compute",
                         beforeSend: function() {
+                            console.log("iN")
+                            var totalWhites = parseInt($("#totalWhites").val() == "" ? 0 : $("#totalWhites").val(),10);
+                            var selectedWhites = parseInt($("#selectedWhites").val() == "" ? 0 : $("#selectedWhites").val(),10);
 
-                            var totalWhites = $("#totalWhites").val() == "" ? 0 : $("#totalWhites").val();
-                            var selectedWhites = $("#selectedWhites").val() == "" ? 0 : $("#selectedWhites").val();
+                            var totalBlacks = parseInt($("#totalBlacks").val() == "" ? 0 : $("#totalBlacks").val(),10);
+                            var selectedBlacks = parseInt($("#selectedBlacks").val() == "" ? 0 : $("#selectedBlacks").val(),10);
 
-                            var totalBlacks = $("#totalBlacks").val() == "" ? 0 : $("#totalBlacks").val();
-                            var selectedBlacks = $("#selectedBlacks").val() == "" ? 0 : $("#selectedBlacks").val();
+                            var totalHispanics = parseInt($("#totalHispanics").val() == "" ? 0 : $("#totalHispanics").val(),10);
+                            var selectedHispanics = parseInt($("#selectedHispanics").val() == "" ? 0 : $("#selectedHispanics").val(),10);
 
-                            var totalHispanics = $("#totalHispanics").val() == "" ? 0 : $("#totalHispanics").val();
-                            var selectedHispanics = $("#selectedHispanics").val() == "" ? 0 : $("#selectedHispanics").val();
+                            var totalHawaiians = parseInt($("#totalHawaiians").val() == "" ? 0 : $("#totalHawaiians").val(),10);
+                            var selectedHawaiians = parseInt($("#selectedHawaiians").val() == "" ? 0 : $("#selectedHawaiians").val(),10);
 
-                            var totalHawaiians = $("#totalHawaiians").val() == "" ? 0 : $("#totalHawaiians").val();
-                            var selectedHawaiians = $("#selectedHawaiians").val() == "" ? 0 : $("#selectedHawaiians").val();
+                            var totalAsians = parseInt($("#totalAsians").val() == "" ? 0 : $("#totalAsians").val(),10);
+                            var selectedAsians = parseInt($("#selectedAsians").val() == "" ? 0 : $("#selectedAsians").val(),10);
 
-                            var totalAsians = $("#totalAsians").val() == "" ? 0 : $("#totalAsians").val();
-                            var selectedAsians = $("#selectedAsians").val() == "" ? 0 : $("#selectedAsians").val();
+                            var totalAmericans = parseInt($("#totalAmericans").val() == "" ? 0 : $("#totalAmericans").val(),10);
+                            var selectedAmericans = parseInt($("#selectedAmericans").val() == "" ? 0 : $("#selectedAmericans").val(),10);
 
-                            var totalAmericans = $("#totalAmericans").val() == "" ? 0 : $("#totalAmericans").val();
-                            var selectedAmericans = $("#selectedAmericans").val() == "" ? 0 : $("#selectedAmericans").val();
-
-                            var totalTows = $("#totalTows").val() == "" ? 0 : $("#totalTows").val();
-                            var selectedTows = $("#selectedTows").val() == "" ? 0 : $("#selectedTows").val();
+                            var totalTows = parseInt($("#totalTows").val() == "" ? 0 : $("#totalTows").val(),10);
+                            var selectedTows = parseInt($("#selectedTows").val() == "" ? 0 : $("#selectedTows").val(),10);
 
                             var benchmarkId = $('input[name=benchmark]:checked', '#benchmark-form').val();
                             var protectedId = $('input[name=protected]:checked', '#protected-form').val();
 
                             //GENDER
-                            var totalMales = $("#totalMales").val() == "" ? 0 : $("#totalMales").val();
-                            var selectedMales = $("#selectedMales").val() == "" ? 0 : $("#selectedMales").val();
+                            var totalMales = parseInt($("#totalMales").val() == "" ? 0 : $("#totalMales").val(),10);
+                            var selectedMales = parseInt($("#selectedMales").val() == "" ? 0 : $("#selectedMales").val(),10);
 
-                            var totalFemales = $("#totalFemales").val() == "" ? 0 : $("#totalFemales").val();
-                            var selectedFemales = $("#selectedFemales").val() == "" ? 0 : $("#selectedFemales").val();
+                            var totalFemales = parseInt($("#totalFemales").val() == "" ? 0 : $("#totalFemales").val(),10);
+                            var selectedFemales = parseInt($("#selectedFemales").val() == "" ? 0 : $("#selectedFemales").val(),10);
 
-                            var totalOthers = $("#totalOthers").val() == "" ? 0 : $("#totalOthers").val();
-                            var selectedOthers = $("#selectedOthers").val() == "" ? 0 : $("#selectedOthers").val();
+                            var totalOthers = parseInt($("#totalOthers").val() == "" ? 0 : $("#totalOthers").val(),10);
+                            var selectedOthers = parseInt($("#selectedOthers").val() == "" ? 0 : $("#selectedOthers").val(),10);
 
                             var benchmarkIdGender = $('input[name=benchmark-gender]:checked', '#benchmark-form-gender').val();
                             var protectedIdGender = $('input[name=protected-gender]:checked', '#protected-form-gender').val();
 
                             //AGE
-                            var totalYounger = $("#totalYounger").val() == "" ? 0 : $("#totalYounger").val();
-                            var selectedYounger = $("#selectedYounger").val() == "" ? 0 : $("#selectedYounger").val();
+                            var totalYounger = parseInt($("#totalYounger").val() == "" ? 0 : $("#totalYounger").val(),10);
+                            var selectedYounger = parseInt($("#selectedYounger").val() == "" ? 0 : $("#selectedYounger").val(),10);
 
-                            var totalOld = $("#totalOld").val() == "" ? 0 : $("#totalOld").val();
-                            var selectedOld = $("#selectedOld").val() == "" ? 0 : $("#selectedOld").val();
+                            var totalOld = parseInt($("#totalOld").val() == "" ? 0 : $("#totalOld").val(),10);
+                            var selectedOld = parseInt($("#selectedOld").val() == "" ? 0 : $("#selectedOld").val(),10);
 
                             var benchmarkIdAge = $('input[name=benchmark-age]:checked', '#benchmark-form-age').val();
                             var protectedIdAge = $('input[name=protected-age]:checked', '#protected-form-age').val();
@@ -388,11 +388,33 @@
                             var calculateAge = 0;
                             var calculateGender = 0;
 
-
+                            // var SendData={};
 
 
                             if(checkInputs()){
                               calculateRace = 1;
+                            //   sendDataRace = {
+                            //     "tw": totalWhites,
+                            //     "sw": selectedWhites,
+                            //     "tb": totalBlacks,
+                            //     "sb": selectedBlacks,
+                            //     "thi": totalHispanics,
+                            //     "shi": selectedHispanics,
+                            //     "tha": totalHawaiians,
+                            //     "sha": selectedHawaiians,
+                            //     "tas": totalAsians,
+                            //     "sas": selectedAsians,
+                            //     "tam": totalAmericans,
+                            //     "sam": selectedAmericans,
+                            //     "tt": totalTows,
+                            //     "st": selectedTows,
+                            //     "bid": benchmarkId,
+                            //     "pid": protectedId,
+                            //
+                            //
+                            //   }
+                            // SendData.Race= sendDataRace;
+                            // data: SendData;
                             }
                             else{
                               calculateRace = 0;
@@ -400,6 +422,20 @@
 
                             if(checkGenderInputs()){
                               calculateGender = 1;
+                              // sendDataGender = {
+                              //   "tm": totalMales,
+                              //   "tf": totalFemales,
+                              //   "to": totalOthers,
+                              //   "sm": selectedMales,
+                              //   "sf": selectedFemales,
+                              //   "so": selectedOthers,
+                              //   "bidG": benchmarkIdGender,
+                              //   "pidG": protectedIdGender,
+                              //
+                              //
+                              // }
+                              // SendData.Gender= sendDataGender;
+                              // data: SendData;
                             }
                             else{
                               calculateGender = 0;
@@ -407,11 +443,32 @@
 
                             if(checkAgeInputs()){
                               calculateAge = 1;
+                              // sendDataAge = {
+                              //   "ty": totalYounger,
+                              //   "told": totalOld,
+                              //   "sy": selectedYounger,
+                              //   "sold": selectedOld,
+                              //   "bidA": benchmarkIdAge,
+                              //   "pidA": protectedIdAge,
+                              //
+                              //
+                              // }
+                              // SendData.Age= sendDataAge;
+                              // data: SendData;
                             }
                             else{
                               calculateAge = 0;
                             }
-
+                            console.log(calculateAge);
+                            console.log(calculateGender);
+                            console.log(calculateRace);
+                            // sendDataTrueOrFalse = {
+                            //   "calcR": calculateRace,
+                            //   "calcG": calculateGender,
+                            //   "calcA": calculateAge,
+                            // }
+                            // SendData.ToF=sendDataTrueOrFalse;
+                            // data: SendData;
 
                             sendData = {
                                 "tw": totalWhites,
@@ -453,15 +510,15 @@
                             }
 
                         },
-                        data: sendData,
+                         data: SendData,
                         success: function(result){
-
+                          console.log("IN SUCCESS 1.0");
                             if(result['error']) {
                               console.log("error");
                                 compute(e);
                             }
                             else{
-
+                              console.log("IN SUCCESS");
                                 populateData(result);
                             }
 
@@ -574,12 +631,12 @@
                     if(selectedWhites >= 0 && selectedBlacks >= 0 && selectedHispanics >= 0 && selectedHawaiians >= 0 && selectedAsians >= 0 && selectedAmericans >= 0 && selectedTows >= 0) {
                         if(selectedWhites <= totalWhites && selectedBlacks <= totalBlacks && selectedHispanics <= totalHispanics && selectedHawaiians <= totalHawaiians && selectedAsians <= totalAsians && selectedAmericans <= totalAmericans && selectedTows <= totalTows) {
                             if($('input[name=benchmark]:checked', '#benchmark-form').val() === undefined) {
-                            //    alert("Select a Benchmark group");
+                                //alert("Select a Benchmark group");
                                 return false;
                             }
                             else {
                                 if($('input[name=protected]:checked', '#protected-form').val() === undefined) {
-                                //    alert("Select a Protected group");
+                                  //  alert("Select a Protected group");
                                     return false;
                                 }
                                 else {

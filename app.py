@@ -47,6 +47,43 @@ def compute():
     calculateAge = int(request.form['calcA'])
     calculateGender = int(request.form['calcG'])
     calculateRace = int(request.form['calcR'])
+    # if(int(request.form['sendDataTrueOrFalse'].calcR)==1):
+    #     calculateRace=1
+    #     totalWhites = int(request.form['sendDataRace'].tw)
+    #     selectedWhites = int(request.form['sendDataRace'].sw)
+    #     totalBlacks = int(request.form['sendDataRace'].tb)
+    #     selectedBlacks = int(request.form['sendDataRace'].sb)
+    #     totalHispanics = int(request.form['sendDataRace'].thi)
+    #     selectedHispanics = int(request.form['sendDataRace'].shi)
+    #     totalHawaiians = int(request.form['sendDataRace'].tha)
+    #     selectedHawaiians = int(request.form['sendDataRace'].sha)
+    #     totalAsians = int(request.form['sendDataRace'].tas)
+    #     selectedAsians = int(request.form['sendDataRace'].sas)
+    #     totalAmericans = int(request.form['sendDataRace'].tam)
+    #     selectedAmericans = int(request.form['sendDataRace'].sam)
+    #     totalTows = int(request.form['sendDataRace'].tt)
+    #     selectedTows = int(request.form['sendDataRace'].st)
+    # if(int(request.form['sendDataTrueOrFalse'].calcG)==1):
+    #     calculateGender=1
+    #     totalMales = int(request.form['sendDataRace'].tm)
+    #     selectedMales = int(request.form['sendDataRace'].sm)
+    #     totalFemales = int(request.form['sendDataRace'].tf)
+    #     selectedFemales = int(request.form['sendDataRace'].sf)
+    #     totalOthers = int(request.form['sendDataRace'].to)
+    #     selectedOthers = int(request.form['sendDataRace'].so)
+    # if(int(request.form['sendDataTrueOrFalse'].calcA)==1):
+    #     calculateAge=1
+    #     totalYounger = int(request.form['sendDataRace'].ty)
+    #     selectedYounger = int(request.form['sendDataRace'].sy)
+    #     totalOld = int(request.form['sendDataRace'].told)
+    #     selectedOld = int(request.form['sendDataRace'].sold)
+
+
+
+
+    print("calA"+ str(calculateAge))
+    print("calG"+ str(calculateGender))
+    print("calR"+ str(calculateRace))
 
 
 
@@ -318,7 +355,7 @@ def compute():
                 ciReport=ConfidenceInterval(selectedAmericans,selectedWhites,totalAmericans,totalWhites)
                 pdReport=ProbabilityDistribution(selectedAmericans,selectedWhites,totalAmericans,totalWhites)
                 csReport=chiSquareOrFisherExact(selectedAmericans,selectedWhites,totalAmericans,totalWhites)
-    
+
     if(calculateRace==0):
         aiReport=""
         sdReport=""

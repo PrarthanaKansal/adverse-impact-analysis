@@ -337,53 +337,6 @@
                         url: "/api/compute",
                         beforeSend: function() {
                             console.log("iN")
-                            var totalWhites = parseInt($("#totalWhites").val() == "" ? 0 : $("#totalWhites").val(),10);
-                            var selectedWhites = parseInt($("#selectedWhites").val() == "" ? 0 : $("#selectedWhites").val(),10);
-
-                            var totalBlacks = parseInt($("#totalBlacks").val() == "" ? 0 : $("#totalBlacks").val(),10);
-                            var selectedBlacks = parseInt($("#selectedBlacks").val() == "" ? 0 : $("#selectedBlacks").val(),10);
-
-                            var totalHispanics = parseInt($("#totalHispanics").val() == "" ? 0 : $("#totalHispanics").val(),10);
-                            var selectedHispanics = parseInt($("#selectedHispanics").val() == "" ? 0 : $("#selectedHispanics").val(),10);
-
-                            var totalHawaiians = parseInt($("#totalHawaiians").val() == "" ? 0 : $("#totalHawaiians").val(),10);
-                            var selectedHawaiians = parseInt($("#selectedHawaiians").val() == "" ? 0 : $("#selectedHawaiians").val(),10);
-
-                            var totalAsians = parseInt($("#totalAsians").val() == "" ? 0 : $("#totalAsians").val(),10);
-                            var selectedAsians = parseInt($("#selectedAsians").val() == "" ? 0 : $("#selectedAsians").val(),10);
-
-                            var totalAmericans = parseInt($("#totalAmericans").val() == "" ? 0 : $("#totalAmericans").val(),10);
-                            var selectedAmericans = parseInt($("#selectedAmericans").val() == "" ? 0 : $("#selectedAmericans").val(),10);
-
-                            var totalTows = parseInt($("#totalTows").val() == "" ? 0 : $("#totalTows").val(),10);
-                            var selectedTows = parseInt($("#selectedTows").val() == "" ? 0 : $("#selectedTows").val(),10);
-
-                            var benchmarkId = $('input[name=benchmark]:checked', '#benchmark-form').val();
-                            var protectedId = $('input[name=protected]:checked', '#protected-form').val();
-
-                            //GENDER
-                            var totalMales = parseInt($("#totalMales").val() == "" ? 0 : $("#totalMales").val(),10);
-                            var selectedMales = parseInt($("#selectedMales").val() == "" ? 0 : $("#selectedMales").val(),10);
-
-                            var totalFemales = parseInt($("#totalFemales").val() == "" ? 0 : $("#totalFemales").val(),10);
-                            var selectedFemales = parseInt($("#selectedFemales").val() == "" ? 0 : $("#selectedFemales").val(),10);
-
-                            var totalOthers = parseInt($("#totalOthers").val() == "" ? 0 : $("#totalOthers").val(),10);
-                            var selectedOthers = parseInt($("#selectedOthers").val() == "" ? 0 : $("#selectedOthers").val(),10);
-
-                            var benchmarkIdGender = $('input[name=benchmark-gender]:checked', '#benchmark-form-gender').val();
-                            var protectedIdGender = $('input[name=protected-gender]:checked', '#protected-form-gender').val();
-
-                            //AGE
-                            var totalYounger = parseInt($("#totalYounger").val() == "" ? 0 : $("#totalYounger").val(),10);
-                            var selectedYounger = parseInt($("#selectedYounger").val() == "" ? 0 : $("#selectedYounger").val(),10);
-
-                            var totalOld = parseInt($("#totalOld").val() == "" ? 0 : $("#totalOld").val(),10);
-                            var selectedOld = parseInt($("#selectedOld").val() == "" ? 0 : $("#selectedOld").val(),10);
-
-                            var benchmarkIdAge = $('input[name=benchmark-age]:checked', '#benchmark-form-age').val();
-                            var protectedIdAge = $('input[name=protected-age]:checked', '#protected-form-age').val();
-                            //
                             var calculateRace = 0;
                             var calculateAge = 0;
                             var calculateGender = 0;
@@ -459,6 +412,87 @@
                             else{
                               calculateAge = 0;
                             }
+                            var totalWhites = parseInt($("#totalWhites").val() == "" ? 0 : $("#totalWhites").val(),10);
+                            var selectedWhites = parseInt($("#selectedWhites").val() == "" ? 0 : $("#selectedWhites").val(),10);
+
+                            var totalBlacks = parseInt($("#totalBlacks").val() == "" ? 0 : $("#totalBlacks").val(),10);
+                            var selectedBlacks = parseInt($("#selectedBlacks").val() == "" ? 0 : $("#selectedBlacks").val(),10);
+
+                            var totalHispanics = parseInt($("#totalHispanics").val() == "" ? 0 : $("#totalHispanics").val(),10);
+                            var selectedHispanics = parseInt($("#selectedHispanics").val() == "" ? 0 : $("#selectedHispanics").val(),10);
+
+                            var totalHawaiians = parseInt($("#totalHawaiians").val() == "" ? 0 : $("#totalHawaiians").val(),10);
+                            var selectedHawaiians = parseInt($("#selectedHawaiians").val() == "" ? 0 : $("#selectedHawaiians").val(),10);
+
+                            var totalAsians = parseInt($("#totalAsians").val() == "" ? 0 : $("#totalAsians").val(),10);
+                            var selectedAsians = parseInt($("#selectedAsians").val() == "" ? 0 : $("#selectedAsians").val(),10);
+
+                            var totalAmericans = parseInt($("#totalAmericans").val() == "" ? 0 : $("#totalAmericans").val(),10);
+                            var selectedAmericans = parseInt($("#selectedAmericans").val() == "" ? 0 : $("#selectedAmericans").val(),10);
+
+                            var totalTows = parseInt($("#totalTows").val() == "" ? 0 : $("#totalTows").val(),10);
+                            var selectedTows = parseInt($("#selectedTows").val() == "" ? 0 : $("#selectedTows").val(),10);
+
+                            if($('input[name=benchmark]:checked', '#benchmark-form').val() === undefined){
+                              var benchmarkId = 0;
+                            }
+                            else{
+                              var benchmarkId = $('input[name=benchmark]:checked', '#benchmark-form').val();
+                            }
+                            if($('input[name=protected]:checked', '#protected-form').val() === undefined){
+                              var protectedId = 0;
+                            }
+                            else{
+                              var protectedId = $('input[name=protected]:checked', '#protected-form').val();
+                            }
+
+
+                            //GENDER
+                            var totalMales = parseInt($("#totalMales").val() == "" ? 0 : $("#totalMales").val(),10);
+                            var selectedMales = parseInt($("#selectedMales").val() == "" ? 0 : $("#selectedMales").val(),10);
+
+                            var totalFemales = parseInt($("#totalFemales").val() == "" ? 0 : $("#totalFemales").val(),10);
+                            var selectedFemales = parseInt($("#selectedFemales").val() == "" ? 0 : $("#selectedFemales").val(),10);
+
+                            var totalOthers = parseInt($("#totalOthers").val() == "" ? 0 : $("#totalOthers").val(),10);
+                            var selectedOthers = parseInt($("#selectedOthers").val() == "" ? 0 : $("#selectedOthers").val(),10);
+
+                            if($('input[name=benchmark-gender]:checked', '#benchmark-form-gender').val() === undefined){
+                              var benchmarkIdGender = 0;
+                            }
+                            else{
+                              var benchmarkIdGender = $('input[name=benchmark-gender]:checked', '#benchmark-form-gender').val();
+                            }
+                            if($('input[name=protected-gender]:checked', '#protected-form-gender').val() === undefined){
+                              var protectedIdGender = 0;
+                            }
+                            else{
+                              var protectedIdGender = $('input[name=protected-gender]:checked', '#protected-form-gender').val();
+                            }
+
+
+                            //AGE
+                            var totalYounger = parseInt($("#totalYounger").val() == "" ? 0 : $("#totalYounger").val(),10);
+                            var selectedYounger = parseInt($("#selectedYounger").val() == "" ? 0 : $("#selectedYounger").val(),10);
+
+                            var totalOld = parseInt($("#totalOld").val() == "" ? 0 : $("#totalOld").val(),10);
+                            var selectedOld = parseInt($("#selectedOld").val() == "" ? 0 : $("#selectedOld").val(),10);
+
+                              if($('input[name=benchmark-age]:checked', '#benchmark-form-age').val() === undefined){
+                                var benchmarkIdAge = 0;
+                              }
+                              else{
+                                var benchmarkIdAge = $('input[name=benchmark-age]:checked', '#benchmark-form-age').val();
+                              }
+                              if($('input[name=protected-age]:checked', '#protected-form-age').val() === undefined){
+                                var protectedIdAge = 0;
+                              }
+                              else{
+                                var protectedIdAge = $('input[name=protected-age]:checked', '#protected-form-age').val();
+                              }
+
+                            //
+
                             console.log(calculateAge);
                             console.log(calculateGender);
                             console.log(calculateRace);
@@ -510,7 +544,7 @@
                             }
 
                         },
-                         data: SendData,
+                         data: sendData,
                         success: function(result){
                           console.log("IN SUCCESS 1.0");
                             if(result['error']) {

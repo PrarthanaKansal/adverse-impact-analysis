@@ -11,75 +11,45 @@ def index():
 def compute():
     if(request.form.to_dict() == {}):
         return jsonify({'error' : '500'})
-    totalWhites = int(request.form['tw'])
-    selectedWhites = int(request.form['sw'])
-    totalBlacks = int(request.form['tb'])
-    selectedBlacks = int(request.form['sb'])
-    totalHispanics = int(request.form['thi'])
-    selectedHispanics = int(request.form['shi'])
-    totalHawaiians = int(request.form['tha'])
-    selectedHawaiians = int(request.form['sha'])
-    totalAsians = int(request.form['tas'])
-    selectedAsians = int(request.form['sas'])
-    totalAmericans = int(request.form['tam'])
-    selectedAmericans = int(request.form['sam'])
-    totalTows = int(request.form['tt'])
-    selectedTows = int(request.form['st'])
-    benchmarkId = int(request.form['bid'])
-    protectedId = int(request.form['pid'])
-
-    totalMales = int(request.form['tm'])
-    totalFemales = int(request.form['tf'])
-    totalOthers = int(request.form['to'])
-    selectedMales = int(request.form['sm'])
-    selectedFemales = int(request.form['sf'])
-    selectedOthers = int(request.form['so'])
-    benchmarkIdGender = int(request.form['bidG'])
-    protectedIdGender = int(request.form['pidG'])
-
-    totalYounger = int(request.form['ty'])
-    totalOld = int(request.form['told'])
-    selectedYounger = int(request.form['sy'])
-    selectedOld = int(request.form['sold'])
-    benchmarkIdAge = int(request.form['bidA'])
-    protectedIdAge = int(request.form['pidA'])
-
     calculateAge = int(request.form['calcA'])
     calculateGender = int(request.form['calcG'])
     calculateRace = int(request.form['calcR'])
-    # if(int(request.form['sendDataTrueOrFalse'].calcR)==1):
-    #     calculateRace=1
-    #     totalWhites = int(request.form['sendDataRace'].tw)
-    #     selectedWhites = int(request.form['sendDataRace'].sw)
-    #     totalBlacks = int(request.form['sendDataRace'].tb)
-    #     selectedBlacks = int(request.form['sendDataRace'].sb)
-    #     totalHispanics = int(request.form['sendDataRace'].thi)
-    #     selectedHispanics = int(request.form['sendDataRace'].shi)
-    #     totalHawaiians = int(request.form['sendDataRace'].tha)
-    #     selectedHawaiians = int(request.form['sendDataRace'].sha)
-    #     totalAsians = int(request.form['sendDataRace'].tas)
-    #     selectedAsians = int(request.form['sendDataRace'].sas)
-    #     totalAmericans = int(request.form['sendDataRace'].tam)
-    #     selectedAmericans = int(request.form['sendDataRace'].sam)
-    #     totalTows = int(request.form['sendDataRace'].tt)
-    #     selectedTows = int(request.form['sendDataRace'].st)
-    # if(int(request.form['sendDataTrueOrFalse'].calcG)==1):
-    #     calculateGender=1
-    #     totalMales = int(request.form['sendDataRace'].tm)
-    #     selectedMales = int(request.form['sendDataRace'].sm)
-    #     totalFemales = int(request.form['sendDataRace'].tf)
-    #     selectedFemales = int(request.form['sendDataRace'].sf)
-    #     totalOthers = int(request.form['sendDataRace'].to)
-    #     selectedOthers = int(request.form['sendDataRace'].so)
-    # if(int(request.form['sendDataTrueOrFalse'].calcA)==1):
-    #     calculateAge=1
-    #     totalYounger = int(request.form['sendDataRace'].ty)
-    #     selectedYounger = int(request.form['sendDataRace'].sy)
-    #     totalOld = int(request.form['sendDataRace'].told)
-    #     selectedOld = int(request.form['sendDataRace'].sold)
 
+    if(calculateRace==1):
+        totalWhites = int(request.form['tw'])
+        selectedWhites = int(request.form['sw'])
+        totalBlacks = int(request.form['tb'])
+        selectedBlacks = int(request.form['sb'])
+        totalHispanics = int(request.form['thi'])
+        selectedHispanics = int(request.form['shi'])
+        totalHawaiians = int(request.form['tha'])
+        selectedHawaiians = int(request.form['sha'])
+        totalAsians = int(request.form['tas'])
+        selectedAsians = int(request.form['sas'])
+        totalAmericans = int(request.form['tam'])
+        selectedAmericans = int(request.form['sam'])
+        totalTows = int(request.form['tt'])
+        selectedTows = int(request.form['st'])
+        benchmarkId = int(request.form['bid'])
+        protectedId = int(request.form['pid'])
 
+    if(calculateGender==1):
+        totalMales = int(request.form['tm'])
+        totalFemales = int(request.form['tf'])
+        totalOthers = int(request.form['to'])
+        selectedMales = int(request.form['sm'])
+        selectedFemales = int(request.form['sf'])
+        selectedOthers = int(request.form['so'])
+        benchmarkIdGender = int(request.form['bidG'])
+        protectedIdGender = int(request.form['pidG'])
 
+    if(calculateAge==1):
+        totalYounger = int(request.form['ty'])
+        totalOld = int(request.form['told'])
+        selectedYounger = int(request.form['sy'])
+        selectedOld = int(request.form['sold'])
+        benchmarkIdAge = int(request.form['bidA'])
+        protectedIdAge = int(request.form['pidA'])
 
     print("calA"+ str(calculateAge))
     print("calG"+ str(calculateGender))
@@ -90,6 +60,7 @@ def compute():
     #call functions
     computeData("sup")
     if(calculateRace==1):
+        print("In Race")
         if(benchmarkId==1):
             if(protectedId==2):
                 aiReport=adverseImpact(selectedBlacks,selectedWhites,totalBlacks,totalWhites)
@@ -355,79 +326,81 @@ def compute():
                 ciReport=ConfidenceInterval(selectedAmericans,selectedWhites,totalAmericans,totalWhites)
                 pdReport=ProbabilityDistribution(selectedAmericans,selectedWhites,totalAmericans,totalWhites)
                 csReport=chiSquareOrFisherExact(selectedAmericans,selectedWhites,totalAmericans,totalWhites)
-
-    if(calculateRace==0):
-        aiReport=""
-        sdReport=""
-        ciReport=""
-        pdReport=""
-        csReport=""
+    #
+    # if(calculateRace==0):
+    #     aiReport=""
+    #     sdReport=""
+    #     ciReport=""
+    #     pdReport=""
+    #     csReport=""
 
     if(calculateGender==1):
+        print("In gender")
         if(benchmarkIdGender==1):
             if(protectedIdGender==2):
-                aiReport= str(aiReport) +"Gender Adverse Impact: "+ str(adverseImpact(selectedFemales,selectedMales,totalFemales,totalMales))
-                sdReport= str(sdReport) + "Gender StandardDevReport: "+ str(StandardDevReport(selectedFemales,selectedMales,totalFemales,totalMales))
-                ciReport= str(ciReport) + "Gender Confidence Interval Report: "+ str(ConfidenceInterval(selectedFemales,selectedMales,totalFemales,totalMales))
-                pdReport=str(pdReport) + "Gender Probability Distribution Report: "+ str(ProbabilityDistribution(selectedFemales,selectedMales,totalFemales,totalMales))
-                csReport=str(csReport) + "Gender chi-square report "+ str(chiSquareOrFisherExact(selectedFemales,selectedMales,totalFemales,totalMales))
+                aiReport=  str(adverseImpact(selectedFemales,selectedMales,totalFemales,totalMales))
+                sdReport=  str(StandardDevReport(selectedFemales,selectedMales,totalFemales,totalMales))
+                ciReport=  str(ConfidenceInterval(selectedFemales,selectedMales,totalFemales,totalMales))
+                pdReport= str(ProbabilityDistribution(selectedFemales,selectedMales,totalFemales,totalMales))
+                csReport= str(chiSquareOrFisherExact(selectedFemales,selectedMales,totalFemales,totalMales))
             elif(protectedIdGender==3):
-                aiReport= str(aiReport) +"Gender Adverse Impact: "+ str(adverseImpact(selectedOthers,selectedMales,totalOthers,totalMales))
-                sdReport= str(sdReport) + "Gender StandardDevReport: "+ str(StandardDevReport(selectedOthers,selectedMales,totalOthers,totalMales))
-                ciReport= str(ciReport) + "Gender Confidence Interval Report: "+ str(ConfidenceInterval(selectedOthers,selectedMales,totalOthers,totalMales))
-                pdReport=str(pdReport) + "Gender Probability Distribution Report: "+ str(ProbabilityDistribution(selectedOthers,selectedMales,totalOthers,totalMales))
-                csReport=str(csReport) + "Gender chi-square report "+ str(chiSquareOrFisherExact(selectedOthers,selectedMales,totalOthers,totalMales))
+                aiReport=  str(adverseImpact(selectedOthers,selectedMales,totalOthers,totalMales))
+                sdReport=  str(StandardDevReport(selectedOthers,selectedMales,totalOthers,totalMales))
+                ciReport=  str(ConfidenceInterval(selectedOthers,selectedMales,totalOthers,totalMales))
+                pdReport= str(ProbabilityDistribution(selectedOthers,selectedMales,totalOthers,totalMales))
+                csReport= str(chiSquareOrFisherExact(selectedOthers,selectedMales,totalOthers,totalMales))
         elif(benchmarkIdGender==2):
             if(protectedIdGender==1):
-                aiReport= str(aiReport) +"Gender Adverse Impact: "+ str(adverseImpact(selectedMales,selectedFemales,totalMales,totalFemales))
-                sdReport= str(sdReport) + "Gender StandardDevReport: "+ str(StandardDevReport(selectedMales,selectedFemales,totalMales,totalFemales))
-                ciReport= str(ciReport) + "Gender Confidence Interval Report: "+ str(ConfidenceInterval(selectedMales,selectedFemales,totalMales,totalFemales))
-                pdReport=str(pdReport) + "Gender Probability Distribution Report: "+ str(ProbabilityDistribution(selectedMales,selectedFemales,totalMales,totalFemales))
-                csReport=str(csReport) + "Gender chi-square report "+ str(chiSquareOrFisherExact(selectedMales,selectedFemales,totalMales,totalFemales))
+                aiReport=  str(adverseImpact(selectedMales,selectedFemales,totalMales,totalFemales))
+                sdReport= str(StandardDevReport(selectedMales,selectedFemales,totalMales,totalFemales))
+                ciReport=  str(ConfidenceInterval(selectedMales,selectedFemales,totalMales,totalFemales))
+                pdReport= str(ProbabilityDistribution(selectedMales,selectedFemales,totalMales,totalFemales))
+                csReport= str(chiSquareOrFisherExact(selectedMales,selectedFemales,totalMales,totalFemales))
             elif(protectedIdGender==3):
-                aiReport= str(aiReport) +"Gender Adverse Impact: "+ str(adverseImpact(selectedOthers,selectedFemales,totalOthers,totalFemales))
-                sdReport= str(sdReport) + "Gender StandardDevReport: "+ str(StandardDevReport(selectedOthers,selectedFemales,totalOthers,totalFemales))
-                ciReport= str(ciReport) + "Gender Confidence Interval Report: "+ str(ConfidenceInterval(selectedOthers,selectedFemales,totalOthers,totalFemales))
-                pdReport=str(pdReport) + "Gender Probability Distribution Report: "+ str(ProbabilityDistribution(selectedOthers,selectedFemales,totalOthers,totalFemales))
-                csReport=str(csReport) + "Gender chi-square report "+ str(chiSquareOrFisherExact(selectedOthers,selectedFemales,totalOthers,totalFemales))
+                aiReport=  str(adverseImpact(selectedOthers,selectedFemales,totalOthers,totalFemales))
+                sdReport=  str(StandardDevReport(selectedOthers,selectedFemales,totalOthers,totalFemales))
+                ciReport=  str(ConfidenceInterval(selectedOthers,selectedFemales,totalOthers,totalFemales))
+                pdReport= str(ProbabilityDistribution(selectedOthers,selectedFemales,totalOthers,totalFemales))
+                csReport= str(chiSquareOrFisherExact(selectedOthers,selectedFemales,totalOthers,totalFemales))
         elif(benchmarkIdGender==3):
             if(protectedIdGender==1):
-                aiReport= str(aiReport) +"Gender Adverse Impact: "+ str(adverseImpact(selectedMales,selectedOthers,totalMales,totalOthers))
-                sdReport= str(sdReport) + "Gender StandardDevReport: "+ str(StandardDevReport(selectedMales,selectedOthers,totalMales,totalOthers))
-                ciReport= str(ciReport) + "Gender Confidence Interval Report: "+ str(ConfidenceInterval(selectedMales,selectedOthers,totalMales,totalOthers))
-                pdReport=str(pdReport) + "Gender Probability Distribution Report: "+ str(ProbabilityDistribution(selectedMales,selectedOthers,totalMales,totalOthers))
-                csReport=csReport + "Gender chi-square report "+ str(chiSquareOrFisherExact(selectedMales,selectedOthers,totalMales,totalOthers))
+                aiReport= str(adverseImpact(selectedMales,selectedOthers,totalMales,totalOthers))
+                sdReport=  str(StandardDevReport(selectedMales,selectedOthers,totalMales,totalOthers))
+                ciReport= str(ConfidenceInterval(selectedMales,selectedOthers,totalMales,totalOthers))
+                pdReport= str(ProbabilityDistribution(selectedMales,selectedOthers,totalMales,totalOthers))
+                csReport= str(chiSquareOrFisherExact(selectedMales,selectedOthers,totalMales,totalOthers))
             elif(protectedIdGender==2):
-                aiReport= str(aiReport) +"Gender Adverse Impact: "+ str(adverseImpact(selectedFemales,selectedOthers,totalFemales,totalOthers))
-                sdReport= str(sdReport) + "Gender StandardDevReport: "+ str(StandardDevReport(selectedFemales,selectedOthers,totalFemales,totalOthers))
-                ciReport= str(ciReport) + "Gender Confidence Interval Report: "+ str(ConfidenceInterval(selectedFemales,selectedOthers,totalFemales,totalOthers))
-                pdReport=str(pdReport) + "Gender Probability Distribution Report: "+ str(ProbabilityDistribution(selectedFemales,selectedOthers,totalFemales,totalOthers))
-                csReport=str(csReport) + "Gender chi-square report "+ str(chiSquareOrFisherExact(selectedFemales,selectedOthers,totalFemales,totalOthers))
+                aiReport=  str(adverseImpact(selectedFemales,selectedOthers,totalFemales,totalOthers))
+                sdReport=  str(StandardDevReport(selectedFemales,selectedOthers,totalFemales,totalOthers))
+                ciReport=  str(ConfidenceInterval(selectedFemales,selectedOthers,totalFemales,totalOthers))
+                pdReport=  str(ProbabilityDistribution(selectedFemales,selectedOthers,totalFemales,totalOthers))
+                csReport= str(chiSquareOrFisherExact(selectedFemales,selectedOthers,totalFemales,totalOthers))
 
     #
-    if(calculateRace==0 and calculateGender==0):
-        aiReport=""
-        sdReport=""
-        ciReport=""
-        pdReport=""
-        csReport=""
+    # if(calculateRace==0 and calculateGender==0):
+    #     aiReport=""
+    #     sdReport=""
+    #     ciReport=""
+    #     pdReport=""
+    #     csReport=""
 
 
     if(calculateAge==1):
+        print("In age")
         if(benchmarkIdAge==1):
             if(protectedIdAge==2):
-                aiReport = str(aiReport)+ " AGE: "+ str(adverseImpact(selectedOld,selectedYounger,totalOld,totalYounger))
-                sdReport= str(sdReport) + " AGE: "+ str(StandardDevReport(selectedOld,selectedYounger,totalOld,totalYounger))
-                ciReport= str(ciReport)+" AGE: "+ str(ConfidenceInterval(selectedOld,selectedYounger,totalOld,totalYounger))
-                pdReport=str(pdReport)+" AGE: "+ str(ProbabilityDistribution(selectedOld,selectedYounger,totalOld,totalYounger))
-                csReport=str(csReport)+" AGE: "+ str(chiSquareOrFisherExact(selectedOld,selectedYounger,totalOld,totalYounger))
+                aiReport = str(adverseImpact(selectedOld,selectedYounger,totalOld,totalYounger))
+                sdReport = str(StandardDevReport(selectedOld,selectedYounger,totalOld,totalYounger))
+                ciReport = str(ConfidenceInterval(selectedOld,selectedYounger,totalOld,totalYounger))
+                pdReport = str(ProbabilityDistribution(selectedOld,selectedYounger,totalOld,totalYounger))
+                csReport = str(chiSquareOrFisherExact(selectedOld,selectedYounger,totalOld,totalYounger))
         elif(benchmarkIdAge==2):
             if(protectedIdAge==1):
-                aiReport = str(aiReport)+ " AGE: "+ str(adverseImpact(selectedYounger,selectedOld,totalYounger,totalOld))
-                sdReport= str(sdReport) + " AGE: "+ str(StandardDevReport(selectedYounger,selectedOld,totalYounger,totalOld))
-                ciReport= str(ciReport)+" AGE: "+ str(ConfidenceInterval(selectedYounger,selectedOld,totalYounger,totalOld))
-                pdReport=str(pdReport)+" AGE: "+ str(ProbabilityDistribution(selectedYounger,selectedOld,totalYounger,totalOld))
-                csReport=str(csReport)+" AGE: "+ str(chiSquareOrFisherExact(selectedYounger,selectedOld,totalYounger,totalOld))
+                aiReport = str(adverseImpact(selectedYounger,selectedOld,totalYounger,totalOld))
+                sdReport = str(StandardDevReport(selectedYounger,selectedOld,totalYounger,totalOld))
+                ciReport = str(ConfidenceInterval(selectedYounger,selectedOld,totalYounger,totalOld))
+                pdReport = str(ProbabilityDistribution(selectedYounger,selectedOld,totalYounger,totalOld))
+                csReport = str(chiSquareOrFisherExact(selectedYounger,selectedOld,totalYounger,totalOld))
 
 
     return jsonify({

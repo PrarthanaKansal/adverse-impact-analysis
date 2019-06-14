@@ -64,10 +64,10 @@ def fisherexact(minoritySelected, majoritySelected, minority, majority):
     y2=majoritySelected+minoritySelected
     x1=majority+majoritySelected
     x2=minority+minoritySelected
-    print('y1: '+ str(y1))
-    print('y2: '+ str(y2))
-    print('x1: '+ str(x1))
-    print('x2: '+ str(x2))
+    # print('y1: '+ str(y1))
+    # print('y2: '+ str(y2))
+    # print('x1: '+ str(x1))
+    # print('x2: '+ str(x2))
 
     return (fact(y1)*fact(y2)*fact(x1)*fact(x2))/(fact(x1+x2)*fact(majority)*fact(majoritySelected)*fact(minority)*fact(majoritySelected))
 

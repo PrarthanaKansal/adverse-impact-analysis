@@ -108,8 +108,10 @@ def StandardDevReport(minoritySelected, majoritySelected, minority, majority):
         #conditioned
         # print("SD is :")
         # print(sd)
-        StandardDevCheck(sd)
-        return sd
+        answer = str(sd)
+        answer = answer + StandardDevCheck(sd)
+
+        return answer
     else:
         return "NaN"
 

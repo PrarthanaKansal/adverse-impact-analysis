@@ -6,98 +6,117 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <title>Adverse Impact Analysis</title>
+        <link href='http://fonts.googleapis.com/css?family=Oswald:500,700,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+             <style>
+      .border {
+        display: inline-block;
+        width: 100px;
+        height: 70px;
+        margin: 6px;
+      }
+      </style>
     </head>
-    <body style="background: black; font-family: 'Montserrat', sans-serif;">
+    <body style="background: black; font-family: 'Montserrat';">
 
         <div class="container text-white">
-            <h1 class="text-danger text-center my-5">
-                Adverse Impact Analysis
+            <h1 class="text-danger text-center my-4" style="font-family: 'Dancing Script', cursive;">
+                <p class="display-4"><strong>ADVERSE IMPACT ANALYSIS</strong></p>
             </h1>
-            <h5 class="text-left mt-5 mb-3 text-success">Enter the Data</h5>
-            <h6 class="text-center mt-2 mb-3 text-warning">RACE/ETHNICITY</h6>
+
+            <!-- <div style="text-align: center"><img src="abc.jpeg" alt="Paris" width="600" height="250" class="center" padding-right: 50px;/></div> -->
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!-- <h5 class="text-left mt-5 mb-3 text-success">Enter the Data</h5> -->
+            <h3 class="text-center mt-2 mb-3 text-warning" style="font-family: 'Oswald'">RACE/ETHNICITY</h3>
             <form>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of White</label>
                         <input type="number" class="form-control" id="totalWhites" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
                         <label>Number of White selected</label>
                         <input type="number" class="form-control" id="selectedWhites" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of White</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of White</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of Black or African American</label>
                         <input type="number" class="form-control" id="totalBlacks" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
                         <label>Number of Black or African American selected</label>
                         <input type="number" class="form-control" id="selectedBlacks" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of Black or African American</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of Black or African American</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of Hispanic or Latino</label>
                         <input type="number" class="form-control" id="totalHispanics" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
                         <label>Number of Hispanic or Latino selected</label>
                         <input type="number" class="form-control" id="selectedHispanics" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of Hispanic or Latino</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of Hispanic or Latino</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of Native Hawaiian or Pacific Islander</label>
                         <input type="number" class="form-control" id="totalHawaiians" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
                         <label>Number of Native Hawaiian or Pacific Islander selected</label>
                         <input type="number" class="form-control" id="selectedHawaiians" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of Native Hawaiian or Pacific Islander</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of Native Hawaiian or Pacific Islander</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of Asian</label>
                         <input type="number" class="form-control" id="totalAsians" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
                         <label>Number of Asian selected</label>
                         <input type="number" class="form-control" id="selectedAsians" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of Asian</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of Asian</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of Native American or Alaska Native</label>
                         <input type="number" class="form-control" id="totalAmericans" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
                         <label>Number of Native American or Alaska Native selected</label>
                         <input type="number" class="form-control" id="selectedAmericans" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of Native American or Alaska Native</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of Native American or Alaska Native</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
-                        <label>Total number of Two or More Races</label>
+                        <label>Total number of two or more races</label>
                         <input type="number" class="form-control" id="totalTows" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
-                        <label>Number of Two or More Races selected</label>
+                        <label>Number of two or more races selected</label>
                         <input type="number" class="form-control" id="selectedTows" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of Two or More Races</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of Two or more Races</small>
                     </div>
                 </div>
                 <h5 class="text-left mt-4 mb-3 text-success">Select Benchmark Group</h5>
@@ -137,31 +156,31 @@
                 <div class="form-check p-0" id="protected-form">
                     <div class="row">
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected" id="checkWhiteP" value="1">
+                            <input type="checkbox" name="protected" id="checkWhiteP" value="1">
                             <label class="form-check-label" for="checkWhiteP">White</label>
                         </div>
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected" id="checkBlackP" value="2">
+                            <input type="checkbox" name="protected" id="checkBlackP" value="2">
                             <label class="form-check-label" for="checkBlackP">Black or African American</label>
                         </div>
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected" id="checkHispanicP" value="3">
+                            <input type="checkbox" name="protected" id="checkHispanicP" value="3">
                             <label class="form-check-label" for="checkHispanicP">Hispanic or Latinos</label>
                         </div>
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected" id="checkHawaiianP" value="4">
+                            <input type="checkbox" name="protected" id="checkHawaiianP" value="4">
                             <label class="form-check-label" for="checkHawaiianP">Native Hawaiian</label>
                         </div>
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected" id="checkAsianP" value="5">
+                            <input type="checkbox" name="protected" id="checkAsianP" value="5">
                             <label class="form-check-label" for="checkAsianP">Asian</label>
                         </div>
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected" id="checkAmericanP" value="6">
+                            <input type="checkbox" name="protected" id="checkAmericanP" value="6">
                             <label class="form-check-label" for="checkAmericanP">Native American or Alaska Native</label>
                         </div>
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected" id="checkTwoP" value="7">
+                            <input type="checkbox" name="protected" id="checkTwoP" value="7">
                             <label class="form-check-label" for="checkTwoP">Two or more races</label>
                         </div>
                     </div>
@@ -173,12 +192,14 @@
                 </div>
                 <div class="row mb-5 d-none" id="results">
                     <div class="col">
+
+
                         <h2 class="text-danger text-center">Results</h2>
                         <h5 class="text-left mt-3 text-success">Adverse-Impact Report: <span class="text-white" id="aiReport">00.00</span></h5>
                         <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReport">00.00</span></h5>
                         <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReport">00.00</span></h5>
                         <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReport">00.00</span></h5>
-                        <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReport">00.00</span></h5>
+                        <!-- <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReport">00.00</span></h5> -->
                     </div>
                 </div>
             </form>
@@ -187,42 +208,43 @@
 
 
 
-                <h5 class="text-center mt-2 mb-3 text-warning">GENDER</h5>
+                <!-- <h5 class="text-center mt-2 mb-3 text-warning">GENDER</h5> -->
+                <h3 class="text-center mt-2 mb-3 text-warning" style="font-family: 'Oswald'">GENDER</h3>
                 <form>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of Males</label>
                         <input type="number" class="form-control" id="totalMales" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
                         <label>Number of Males selected</label>
                         <input type="number" class="form-control" id="selectedMales" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of Males</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of males</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Total number of Females</label>
                         <input type="number" class="form-control" id="totalFemales" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
                         <label>Number of Females selected</label>
                         <input type="number" class="form-control" id="selectedFemales" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of Females</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of females</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
-                        <label>Total number of People identifying as Others</label>
+                        <label>Total number of people identified as Others</label>
                         <input type="number" class="form-control" id="totalOthers" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
-                        <label>Number of People identifying as Others selected</label>
+                        <label>Number of people identified as Others selected</label>
                         <input type="number" class="form-control" id="selectedOthers" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of People identifying as Others</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of people identified as others</small>
                     </div>
                 </div>
                 <h5 class="text-left mt-4 mb-3 text-success">Select Benchmark Group</h5>
@@ -246,15 +268,15 @@
                 <div class="form-check p-0" id="protected-form-gender">
                     <div class="row">
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected-gender" id="checkMaleP" value="1">
+                            <input type="checkbox" name="protected-gender" id="checkMaleP" value="1">
                             <label class="form-check-label" for="checkMaleP">Male</label>
                         </div>
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected-gender" id="checkFemaleP" value="2">
+                            <input type="checkbox" name="protected-gender" id="checkFemaleP" value="2">
                             <label class="form-check-label" for="checkFemaleP">Female</label>
                         </div>
                         <div class="col-auto col-lg-4">
-                            <input type="radio" name="protected-gender" id="checkOtherP" value="3">
+                            <input type="checkbox" name="protected-gender" id="checkOtherP" value="3">
                             <label class="form-check-label" for="checkOtherP">Other</label>
                         </div>
                     </div>
@@ -271,7 +293,7 @@
                         <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReportGender">00.00</span></h5>
                         <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReportGender">00.00</span></h5>
                         <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReportGender">00.00</span></h5>
-                        <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReportGender">00.00</span></h5>
+                        <!-- <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReportGender">00.00</span></h5> -->
                     </div>
                 </div>
             </form>
@@ -280,30 +302,31 @@
 
 
 
-                <h5 class="text-center mt-2 mb-3 text-warning">AGE</h5>
+                <!-- <h5 class="text-center mt-2 mb-3 text-warning">AGE</h5> -->
+                <h3 class="text-center mt-2 mb-3 text-warning" style="font-family: 'Oswald'">AGE</h3>
                 <form>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
-                        <label>Total number of People less than the age of 40</label>
+                        <label>Total number of people below the age of 40</label>
                         <input type="number" class="form-control" id="totalYounger" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
-                        <label>Number of People less than the age of 40 selected</label>
+                        <label>Selected number of people below the age of 40</label>
                         <input type="number" class="form-control" id="selectedYounger" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of People People less than the age of 40</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of people below the age of 40</small>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
-                        <label>Total number of People greater than or equal to the age of 40</label>
+                        <label>Total number of people above the age of 40</label>
                         <input type="number" class="form-control" id="totalOld" placeholder="">
-                        <small class="form-text text-muted">Value >= 0</small>
+                        <small class="form-text text-muted">Enter value greater than zero</small>
                     </div>
                     <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
-                        <label>Number of People greater than or equal to the age of 40 selected</label>
+                        <label> Selected number of people above the age of 40</label>
                         <input type="number" class="form-control" id="selectedOld" placeholder="">
-                        <small class="form-text text-muted">Value <= Total Number of People greater than or equal to the age of 40</small>
+                        <small class="form-text text-muted">Enter value less than or equal to total number of people above the age of 40</small>
                     </div>
                 </div>
 
@@ -312,11 +335,11 @@
                     <div class="row">
                         <div class="col-auto col-md-6">
                             <input type="radio" name="benchmark-age" id="checkYoungB" value="1">
-                            <label class="form-check-label" for="checkYoungB">People less than the age of 40</label>
+                            <label class="form-check-label" for="checkYoungB">People below the age of 40</label>
                         </div>
                         <div class="col-auto col-md-6">
                             <input type="radio" name="benchmark-age" id="checkOldB" value="2">
-                            <label class="form-check-label" for="checkoldB">People greater than or equal to the age of 40</label>
+                            <label class="form-check-label" for="checkoldB">People above or equal to the age of 40</label>
                         </div>
                     </div>
                 </div>
@@ -324,12 +347,12 @@
                 <div class="form-check p-0" id="protected-form-age">
                     <div class="row">
                         <div class="col-auto col-md-6">
-                            <input type="radio" name="protected-age" id="checkYoungP" value="1">
-                            <label class="form-check-label" for="checkYoungP">People less than the age of 40</label>
+                            <input type="checkbox" name="protected-age" id="checkYoungP" value="1">
+                            <label class="form-check-label" for="checkYoungP">People below the age of 40</label>
                         </div>
                         <div class="col-auto col-md-6">
-                            <input type="radio" name="protected-age" id="checkOldP" value="2">
-                            <label class="form-check-label" for="checkOldP">People greater than or equal to the age of 40</label>
+                            <input type="checkbox" name="protected-age" id="checkOldP" value="2">
+                            <label class="form-check-label" for="checkOldP">People above or equal to the age of 40</label>
                         </div>
                     </div>
                 </div>
@@ -345,7 +368,7 @@
                         <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReportAge">00.00</span></h5>
                         <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReportAge">00.00</span></h5>
                         <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReportAge">00.00</span></h5>
-                        <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReportAge">00.00</span></h5>
+                        <!-- <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReportAge">00.00</span></h5> -->
                     </div>
                 </div>
             </form>
@@ -359,7 +382,7 @@
 
             var sendData = null;
 
-
+            var raceNumber = null;
 
             function computeGender(e){
                 // var a = 2.3;
@@ -395,7 +418,18 @@
                             var protectedIdGender = 0;
                           }
                           else{
-                            var protectedIdGender = $('input[name=protected-gender]:checked', '#protected-form-gender').val();
+                            // var protectedIdGender = $('input[name=protected-gender]:checked', '#protected-form-gender').val();
+                            var searchIDs = [];
+                            var protectedIdGender = [];
+
+                            $("#protected-form-gender input:checkbox:checked").map(function(){
+                              searchIDs.push($(this).val());
+                              //console.log(Number.isInteger($(this).val()));
+                            });
+                            protectedIdGender = searchIDs;
+                            protectedIdGender = JSON.stringify(protectedIdGender);
+                            // console.log("OK");
+                            // console.log(protectedId);
                           }
                           sendData = {
                               "tm": totalMales,
@@ -405,7 +439,7 @@
                               "sf": selectedFemales,
                               "so": selectedOthers,
                               "bidG": benchmarkIdGender,
-                              "pidG": protectedIdGender,
+                              "pidG": JSON.stringify(protectedIdGender),
 
                               "calcA": calculateAge,
                               "calcG": calculateGender,
@@ -462,7 +496,17 @@
                             var protectedIdAge = 0;
                           }
                           else{
-                            var protectedIdAge = $('input[name=protected-age]:checked', '#protected-form-age').val();
+                            var searchIDs = [];
+                            var protectedIdAge = [];
+
+                            $("#protected-form-age input:checkbox:checked").map(function(){
+                              searchIDs.push($(this).val());
+                              //console.log(Number.isInteger($(this).val()));
+                            });
+                            protectedIdAge = searchIDs;
+                            protectedIdAge = JSON.stringify(protectedIdAge);
+                            // console.log("OK");
+                            // console.log(protectedId);
                           }
                           sendData = {
                             "ty": totalYounger,
@@ -470,7 +514,7 @@
                             "sy": selectedYounger,
                             "sold": selectedOld,
                             "bidA": benchmarkIdAge,
-                            "pidA": protectedIdAge,
+                            "pidA": JSON.stringify(protectedIdAge),
 
                               "calcA": calculateAge,
                               "calcG": calculateGender,
@@ -500,7 +544,7 @@
 
 
             function compute(e) {
-
+            //  raceNumber =   getRaceNumber();
                 e.preventDefault();
                 $("#results").addClass('d-none');
                 if(checkInputs()) {
@@ -544,7 +588,18 @@
                               var protectedId = 0;
                             }
                             else{
-                              var protectedId = $('input[name=protected]:checked', '#protected-form').val();
+                              // var protectedId = $('input[name=protected]:checked', '#protected-form').val();
+                              var searchIDs = [];
+                              var protectedId = [];
+
+                              $("#protected-form input:checkbox:checked").map(function(){
+                                searchIDs.push($(this).val());
+                                //console.log(Number.isInteger($(this).val()));
+                              });
+                              protectedId = searchIDs;
+                              protectedId = JSON.stringify(protectedId);
+                              console.log("OK");
+                              console.log(protectedId);
                             }
 
 
@@ -564,7 +619,7 @@
                                 "tt": totalTows,
                                 "st": selectedTows,
                                 "bid": benchmarkId,
-                                "pid": protectedId,
+                                "pid": JSON.stringify(protectedId),
 
 
                                 "calcA": calculateAge,
@@ -589,6 +644,26 @@
                         }
                     });
                 }
+
+            }
+
+            function getRaceNumber(){
+              var searchIDs = [];
+
+              $("#protected-form input:checkbox:checked").map(function(){
+                searchIDs.push($(this).val());
+              });
+              console.log("Print");
+              console.log(searchIDs);
+              console.log(searchIDs[length]);
+              return searchIDs[length];
+              // console.log("OK")
+              // $("#protected-form input:checked").each(function() {
+              // alert( $(this).attr('value') );
+
+
+		// });
+
 
             }
 

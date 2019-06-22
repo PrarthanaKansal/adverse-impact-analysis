@@ -14,12 +14,17 @@ def adverseImpact(minoritySelected, majoritySelected, minority, majority):
         adverseImpactMajority = 0
     else:
         adverseImpactMajority = rateOfMajority / rateOfMinority
-    # print('Rate of Minority: ' + str(rateOfMinority))
-    # print('Rate of Majority: ' + str(rateOfMajority))
-    # print('Adverse Impact on Minority: ' + str(adverseImpactMinority))
-    # print('Adverse Impact on Majority: ' + str(adverseImpactMajority))
-    return adverseImpactMinority
-#pass
+
+        # print(adverseImpactMajority)
+        # print(adverseImpactMinority)
+
+    if adverseImpactMinority>0.8:
+        output="The Impact  Ratio is "+ str(adverseImpactMinority)+" which is greater than 0.8. It, is evident that there is no adverse impact, based on 4/5th's rule. "
+        return output
+    else:
+        output="The Impact  Ratio is "+ str(adverseImpactMinority)+" which is less than 0.8. It, is evident that there is adverse impact, based on 4/5th's rule. "
+        return output
+pass
 
 #working
 def displayAI(numm):
@@ -28,56 +33,66 @@ def displayAI(numm):
 pass
 
 #working
-#working
 def chiSquare(minoritySelected, majoritySelected, minority, majority):
     minorityNotSelected = minority - minoritySelected  # d
     majorityNotSelected = majority - majoritySelected  # b
     N = majority + minority  # majoritySelected a
     # minoritySelected c
+    answer = ''
     if minorityNotSelected and majorityNotSelected >0 :
         chiSquare = (((((majoritySelected * minorityNotSelected) - (majorityNotSelected * minoritySelected)) * (
                     (majoritySelected * minorityNotSelected) - (majorityNotSelected * minoritySelected))) * N) / (
                                  (majoritySelected + majorityNotSelected) * (minoritySelected + minorityNotSelected) * (
                                      majorityNotSelected + minorityNotSelected) * (majoritySelected + minoritySelected)))
-        print('Value for ChiSquare: ' + str(chiSquare))
-
+        answer = 'Value for ChiSquare: ' + str(chiSquare)
+        # print(chiSquare)
         if (chiSquare < 3.841):
-            return ("The value of the statistic is less than 3.841. Absence of bias with 95% chance")
-
+            answer = answer + "\n The value of the statistic is less than 3.841. "
+            answer = answer + "\n This indicates that there is absence of bias with 95% chance. Therefore, It can be concluded that these results are not the result of bias."
         else:
             if chiSquare > 6.6635:
-                return ("Bias with 99% chance")
+                answer = answer + "\n The value of statistic is greater than 6.635. This indicates that its is a result of bias with 99% chance."
             elif (chiSquare > 3.841 and chiSquare < 6.635):
-                return ("Bias with 95% chance")
+                answer = answer + "\n The value of statistic is greater than 3.841 but less than 6.635. This indicates that it is a result of bias with 95% chance."
     else:
-        return ("chi square : NaN")
+        answer = answer + "\n chi square : NaN"
+        answer = answer + "\n Absence of bias"
 
+    return answer
 pass
-
 
 # chiSquare(minoritySelected, majoritySelected, minority, majority)
 
 def fisherexact(minoritySelected, majoritySelected, minority, majority):
-    y1=majority+minority
-    y2=majoritySelected+minoritySelected
-    x1=majority+majoritySelected
-    x2=minority+minoritySelected
-    print('y1: '+ str(y1))
-    print('y2: '+ str(y2))
-    print('x1: '+ str(x1))
-    print('x2: '+ str(x2))
+    majorityNotSelected= majority - majoritySelected
+    minorityNotSelected=minority - minoritySelected
+    a=majority
+    b=minority
+    c=majoritySelected+minoritySelected
+    d=majorityNotSelected+ minorityNotSelected
+    N=minority+majority+majorityNotSelected+minorityNotSelected
 
-    return (fact(y1)*fact(y2)*fact(x1)*fact(x2))/(fact(x1+x2)*fact(majority)*fact(majoritySelected)*fact(minority)*fact(majoritySelected))
+    fe=(fact(a)*fact(b)*fact(c)*fact(d))/(fact(N)*fact(majoritySelected)*fact(majorityNotSelected)*fact(minoritySelected)*fact(minorityNotSelected))
+    # print(fe)
+    if(fe<0.05):
+        output="The value of P is less than 0.05 i.e "+str(fe)+" through which we can infer that the value of p is statistically sigificant. Therefore, this indicates result of bias."
+        return output
+    else:
+        output="The value of P is greater than or equal to 0.05 i.e "+str(fe)+" through which we can infer that the value of p is statistically insigificant. Therefore, this indicates that it is not a result of bias."
+        return output
+    # y1=majority+minority
+    # y2=majoritySelected+minoritySelected
+    # x1=majority+majoritySelected
+    # x2=minority+minoritySelected
 
 def fact(n):
-   if n == 1:
-       return n
-   else:
-       return n*fact(n-1)
 
-def fact(n):
+
    if n == 1:
        return n
+
+   if n == 0:
+       return 1
    else:
        return n*fact(n-1)
 
@@ -88,46 +103,54 @@ def fact(n):
 def SD (minoritySelected, majoritySelected, minority, majority):
     n1 = minoritySelected+majoritySelected
     n2 = minority+majority
+    # print(n1,n2)
     p = minority/n2
     q = n1 / n2
-    if (n1>0):
-        x= math.sqrt((p*(1-p))/n1) * math.sqrt(1-q)
-        return x
-    else :
-        return "Nan"
+
+    val = math.sqrt((p*(1-p))/n1)
+    val2 = math.sqrt(1-q)
+    return val*val2
+
 
 def StandardDevReport(minoritySelected, majoritySelected, minority, majority):
+    # print(minoritySelected, majoritySelected, minority, majority)
     y = SD(minoritySelected, majoritySelected, minority, majority)
     n2 = minority+majority
     p = minority / n2
     n1 = minoritySelected + majoritySelected
     r = minoritySelected
+    answer = ''
     #check
-    if (y>0 and n1 >0):
+    # print('test')
+    if (y>0):
         sd = ((r/n1)-p)/y
         #conditioned
-        # print("SD is :")
-        # print(sd)
-        answer = str(sd)
-        answer = answer + StandardDevCheck(sd)
+        answer = "Standard Deviation is " + str(sd)
 
-        return answer
+        if sd>0:
+            if abs(sd) > 2:
+                answer = answer + "\n  These results show no sigificant change. Hence, its not a result of bias. "
+            if abs(sd) < 2:
+                answer += " These results show no sigificant change. Hence, its not a result of bias."
+        elif sd<0:
+            if abs(sd) > 2:
+                answer += " These results show sigificant change. Hence, it is a result of bias."
+            if abs(sd) < 2:
+                answer += " These results show no sigificant change. Hence, its not a result of bias."
+        elif sd == 0:
+            answer = answer + "\n NaN"
     else:
-        return "NaN"
+        answer = answer + "\n NaN"
+    return answer
 
-def StandardDevCheck(sd):
-    if sd < 2:
-        return "No significance in SD"
-    else:
-        return "Significantly biased"
-#StandardDevReport(minoritySelected, majoritySelected, minority, majority)
+
 
 def is_CI(lb,ub, ratio):
 
     if(ratio >= lb and ratio <= ub):
-        return "desperate impact not found"
+        return "These results show that the proportion of protected group selected is contained in the confidence intervalTherefore a finding of disparate impact is not supported by this data."
     else:
-        return "desperate impact found"
+        return "These results show that the proportion of protected group selected is not contained in the confidence interval. Therefore a finding of disparate impact is  supported by this data."
 pass
 
 
@@ -144,10 +167,10 @@ def ConfidenceInterval(minoritySelected, majoritySelected, minority, majority):
     lb = p - (1.96 * sd)
     ub = p + (1.96 * sd)
 
-    answer = is_CI(lb,ub, ratio)
-    x = "the lower bound is" + str(lb) + "upper bound is" + str(ub) +str(answer)
-
-    return x
+    answer = "Lower Bound is "+  str(lb)
+    answer = answer + "\n Upper Bound is " + str(ub) + "\n"
+    answer = answer +  is_CI(lb,ub, ratio)
+    return answer
 pass
 
 #ConfidenceInterval(majority,majoritySelected,minority,minoritySelected)
@@ -392,10 +415,12 @@ def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majori
 
 def chiSquareOrFisherExact(minoritySelected, majoritySelected, minority, majority):
     if(minoritySelected < 5 or majoritySelected < 5):
-        answer=  fisherexact(minoritySelected, majoritySelected, minority, majority)
+        answer =  fisherexact(minoritySelected, majoritySelected, minority, majority)
+        return answer
     else:
         answer =  chiSquare(minoritySelected, majoritySelected, minority, majority)
-    return answer
+        return answer
+#check comments and pass before running
 #check comments and pass before running
 
 def calling(minoritySelected, majoritySelected, minority, majority):

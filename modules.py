@@ -174,244 +174,244 @@ def ConfidenceInterval(minoritySelected, majoritySelected, minority, majority):
 pass
 
 #ConfidenceInterval(majority,majoritySelected,minority,minoritySelected)
-def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majority):
-	total = minoritySelected + majoritySelected
-	ans = ''
-
-	if(minority == majority ):
-		if((minoritySelected+majoritySelected) > majority):
-			# print('1st')
-			for val in range(0,minority+1):
-				if(((minoritySelected+majoritySelected) - majority + val) > majority):
-					# print('break1')
-					break
-				mino = (minoritySelected+majoritySelected) - majority + val
-				majo = majority - val
-				if(mino == minoritySelected):
-					if( majo == majoritySelected):
-						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
-						ans += 'Selected-> '+str(mino) + ' ' + str(majo)+'\n'
-
-				else:
-					# print(str(mino) + '  ' + str(majo))
-					ans += str(mino) + ' ' + str(majo) +'\n'
-				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
-					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
-				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
-				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
-
-			return ans
-
-		elif((minoritySelected+majoritySelected) <= majority):
-			# print('2nd')
-			for val in range(0,minority+1):
-				if((total-val) < 0):
-					# print('break1')
-					break
-				mino = val
-				majo = total - val
-				if(mino == minoritySelected):
-					if(majo == majoritySelected):
-						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
-						ans += 'Selected-> '+str(mino) + ' ' + str(majo)+'\n'
-				else:
-					# print(str(mino) + '  ' + str(majo))
-					ans += str(mino) + ' ' + str(majo)+'\n'
-				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
-					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
-				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
-				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
-			return ans
-	elif(minority > majority):
-		if((majoritySelected+minoritySelected) <= majority):
-			# print('3rd')
-			for val in range(0,(majoritySelected+minoritySelected)+1):
-				if(((minoritySelected+majoritySelected) - val) < 0):
-					# print('break3')
-					break
-				mino = val
-				majo = (minoritySelected+majoritySelected) - val
-
-				if(mino == minoritySelected):
-					if(majo == majoritySelected):
-						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
-						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+ '\n'
-				else:
-					# print(str(mino) + '  ' + str(majo))
-					ans += str(mino) + '  ' + str(majo)+ '\n'
-				# print(str(mino)+' '+str(majo)+' '+str(minority)+' '+str(majority))
-				# print(adverseImpact(mino,majo,minority,majority))
-				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
-					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
-				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
-				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
-			return ans
-
-		elif((majoritySelected+minoritySelected) > majority):
-			# print('4th')
-			for val in range(0,majority+1):
-				if((((minoritySelected+majoritySelected) - majority) + val) > minority):
-					# print('break4')
-					break
-				mino = ((minoritySelected+majoritySelected) - majority) + val
-				majo = min(majority, minority) - val
-				if(mino == minoritySelected):
-					if(majo == majoritySelected):
-						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
-						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+ '\n'
-				else:
-					# print(str(mino) + '  ' + str(majo))
-					ans += str(mino) + '  ' + str(majo)+ '\n'
-
-				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
-					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
-				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
-				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
-			return ans
-
-	#majority>minority
-	else:
-		if((minoritySelected+majoritySelected) <= minority):
-			# print('5th')
-			for val in range(0,(minoritySelected+majoritySelected)+1):
-				if(((majoritySelected+minoritySelected)+ val) < 0):
-					# print('break5')
-					break
-				mino = val
-				majo = (minoritySelected+majoritySelected) - val
-				if(mino == minoritySelected):
-					if(majo == majoritySelected):
-						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
-						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+'\n'
-				else:
-					# print(str(mino) + '  ' + str(majo))
-					ans += str(mino) + '  ' + str(majo)+'\n'
-				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
-						# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
-						# print('Probability: '+ str(mino/minority))
-						# print()
-						ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
-				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
-				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
-			return ans
-
-		elif(((minoritySelected+majoritySelected) > minority) & ((minoritySelected+majoritySelected) <= majority)):
-			# print('6th')
-			# print('(minoritySelected+majoritySelected) '+ str(minoritySelected)+ ' ' + str(majoritySelected)+ ' '+ str(minoritySelected+majoritySelected))
-			# print(str(majority))
-			for val in range(0,minority +1):
-				if((((minoritySelected+majoritySelected) - minority) + val) > majority):
-					# print('break6')
-					break
-				mino = val
-				majo = (minoritySelected+majoritySelected) - val
-				if(mino == minoritySelected):
-					if(majo == majoritySelected):
-						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
-						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+'\n'
-				else:
-					# print(str(mino) + '  ' + str(majo))
-					ans += str(mino) + '  ' + str(majo)+'\n'
-				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
-					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
-				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
-				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
-			return ans
-
-		elif((minoritySelected+majoritySelected) > majority):
-			# print('7th')
-			for val in range(0,majority+1):
-				if(((minoritySelected+majoritySelected) - minority) + val > majority ):
-					# print('break7')
-					break
-				mino = ((minoritySelected+majoritySelected) - majority) + val
-				majo = majority - val
-				if(mino == minoritySelected):
-					if(majo == majoritySelected):
-						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
-						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+'\n'
-				else:
-					# print(str(mino) + '  ' + str(majo))
-					ans += str(mino) + '  ' + str(majo)+'\n'
-				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
-					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
-				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
-				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
-					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
-					# print('Probability: '+ str(mino/minority))
-					# print()
-					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
-			return ans
+# def ProbabilityDistribution(minoritySelected, majoritySelected, minority, majority):
+# 	total = minoritySelected + majoritySelected
+# 	ans = ''
+#
+# 	if(minority == majority ):
+# 		if((minoritySelected+majoritySelected) > majority):
+# 			# print('1st')
+# 			for val in range(0,minority+1):
+# 				if(((minoritySelected+majoritySelected) - majority + val) > majority):
+# 					# print('break1')
+# 					break
+# 				mino = (minoritySelected+majoritySelected) - majority + val
+# 				majo = majority - val
+# 				if(mino == minoritySelected):
+# 					if( majo == majoritySelected):
+# 						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
+# 						ans += 'Selected-> '+str(mino) + ' ' + str(majo)+'\n'
+#
+# 				else:
+# 					# print(str(mino) + '  ' + str(majo))
+# 					ans += str(mino) + ' ' + str(majo) +'\n'
+# 				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
+# 					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
+#
+# 			return ans
+#
+# 		elif((minoritySelected+majoritySelected) <= majority):
+# 			# print('2nd')
+# 			for val in range(0,minority+1):
+# 				if((total-val) < 0):
+# 					# print('break1')
+# 					break
+# 				mino = val
+# 				majo = total - val
+# 				if(mino == minoritySelected):
+# 					if(majo == majoritySelected):
+# 						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
+# 						ans += 'Selected-> '+str(mino) + ' ' + str(majo)+'\n'
+# 				else:
+# 					# print(str(mino) + '  ' + str(majo))
+# 					ans += str(mino) + ' ' + str(majo)+'\n'
+# 				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
+# 					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 			return ans
+# 	elif(minority > majority):
+# 		if((majoritySelected+minoritySelected) <= majority):
+# 			# print('3rd')
+# 			for val in range(0,(majoritySelected+minoritySelected)+1):
+# 				if(((minoritySelected+majoritySelected) - val) < 0):
+# 					# print('break3')
+# 					break
+# 				mino = val
+# 				majo = (minoritySelected+majoritySelected) - val
+#
+# 				if(mino == minoritySelected):
+# 					if(majo == majoritySelected):
+# 						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
+# 						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+ '\n'
+# 				else:
+# 					# print(str(mino) + '  ' + str(majo))
+# 					ans += str(mino) + '  ' + str(majo)+ '\n'
+# 				# print(str(mino)+' '+str(majo)+' '+str(minority)+' '+str(majority))
+# 				# print(adverseImpact(mino,majo,minority,majority))
+# 				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
+# 					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 			return ans
+#
+# 		elif((majoritySelected+minoritySelected) > majority):
+# 			# print('4th')
+# 			for val in range(0,majority+1):
+# 				if((((minoritySelected+majoritySelected) - majority) + val) > minority):
+# 					# print('break4')
+# 					break
+# 				mino = ((minoritySelected+majoritySelected) - majority) + val
+# 				majo = min(majority, minority) - val
+# 				if(mino == minoritySelected):
+# 					if(majo == majoritySelected):
+# 						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
+# 						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+ '\n'
+# 				else:
+# 					# print(str(mino) + '  ' + str(majo))
+# 					ans += str(mino) + '  ' + str(majo)+ '\n'
+#
+# 				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
+# 					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 			return ans
+#
+# 	#majority>minority
+# 	else:
+# 		if((minoritySelected+majoritySelected) <= minority):
+# 			# print('5th')
+# 			for val in range(0,(minoritySelected+majoritySelected)+1):
+# 				if(((majoritySelected+minoritySelected)+ val) < 0):
+# 					# print('break5')
+# 					break
+# 				mino = val
+# 				majo = (minoritySelected+majoritySelected) - val
+# 				if(mino == minoritySelected):
+# 					if(majo == majoritySelected):
+# 						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
+# 						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+'\n'
+# 				else:
+# 					# print(str(mino) + '  ' + str(majo))
+# 					ans += str(mino) + '  ' + str(majo)+'\n'
+# 				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
+# 						# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
+# 						# print('Probability: '+ str(mino/minority))
+# 						# print()
+# 						ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 			return ans
+#
+# 		elif(((minoritySelected+majoritySelected) > minority) & ((minoritySelected+majoritySelected) <= majority)):
+# 			# print('6th')
+# 			# print('(minoritySelected+majoritySelected) '+ str(minoritySelected)+ ' ' + str(majoritySelected)+ ' '+ str(minoritySelected+majoritySelected))
+# 			# print(str(majority))
+# 			for val in range(0,minority +1):
+# 				if((((minoritySelected+majoritySelected) - minority) + val) > majority):
+# 					# print('break6')
+# 					break
+# 				mino = val
+# 				majo = (minoritySelected+majoritySelected) - val
+# 				if(mino == minoritySelected):
+# 					if(majo == majoritySelected):
+# 						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
+# 						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+'\n'
+# 				else:
+# 					# print(str(mino) + '  ' + str(majo))
+# 					ans += str(mino) + '  ' + str(majo)+'\n'
+# 				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
+# 					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 			return ans
+#
+# 		elif((minoritySelected+majoritySelected) > majority):
+# 			# print('7th')
+# 			for val in range(0,majority+1):
+# 				if(((minoritySelected+majoritySelected) - minority) + val > majority ):
+# 					# print('break7')
+# 					break
+# 				mino = ((minoritySelected+majoritySelected) - majority) + val
+# 				majo = majority - val
+# 				if(mino == minoritySelected):
+# 					if(majo == majoritySelected):
+# 						# print('SELECTED-> '+ str(mino) + '  ' + str(majo))
+# 						ans += 'SELECTED-> '+ str(mino) + '  ' + str(majo)+'\n'
+# 				else:
+# 					# print(str(mino) + '  ' + str(majo))
+# 					ans += str(mino) + '  ' + str(majo)+'\n'
+# 				if(adverseImpact(mino,majo,minority,majority) == 879645.000000202020):
+# 					# print('Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+ ' NIL ' + '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) < 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> YES\n'
+# 				elif( adverseImpact(mino,majo,minority,majority) >= 0.8 ):
+# 					# print('Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO')
+# 					# print('Probability: '+ str(mino/minority))
+# 					# print()
+# 					ans += 'Adverse Impact Ratio of Minority: '+str(adverseImpact(mino,majo,minority,majority))+ '\nAdverse Impact Against Minority? '+ '-> NO\n'
+# 			return ans
 
 def chiSquareOrFisherExact(minoritySelected, majoritySelected, minority, majority):
     if(minoritySelected < 5 or majoritySelected < 5):
@@ -423,38 +423,7 @@ def chiSquareOrFisherExact(minoritySelected, majoritySelected, minority, majorit
 #check comments and pass before running
 #check comments and pass before running
 
-def calling(minoritySelected, majoritySelected, minority, majority):
-    x = adverseImpact(minoritySelected, majoritySelected, minority, majority)
-    displayAI(x)
-    print()
-    chiSquare(minoritySelected, majoritySelected, minority, majority)
-    print()
-    if((majoritySelected -minoritySelected) <= 1 & majoritySelected!=majority & minoritySelected!=minoritySelected):
-        print('Fisher Exact___________')
-        print('FisherExact: '+ str(fisherexact(minoritySelected, majoritySelected, minority, majority)))
-    print()
-    StandardDevReport(minoritySelected, majoritySelected, minority, majority)
-    print()
-    ConfidenceInterval(majority, majoritySelected, minority, minoritySelected)
-    print()
-    ProbabilityDistribution(minoritySelected, majoritySelected, minority, majority)
 
-
-def calling1(minoritySelected, majoritySelected, minority, majority):
-    x = adverseImpact(minoritySelected, majoritySelected, minority, majority)
-    displayAI(x)
-
-    if(minoritySelected < 5 or majoritySelected < 5):
-        print('FisherExact: '+ str(fisherexact(minoritySelected, majoritySelected, minority, majority)))
-    else:
-        chiSquare(minoritySelected, majoritySelected, minority, majority)
-
-    print()
-    StandardDevReport(minoritySelected, majoritySelected, minority, majority)
-    print()
-    ConfidenceInterval(majority, majoritySelected, minority, minoritySelected)
-    print()
-    ProbabilityDistribution(minoritySelected, majoritySelected, minority, majority)
 
 def computeData(s):
     print(s)

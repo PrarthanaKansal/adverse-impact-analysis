@@ -21,7 +21,9 @@
             background-color: lightpink;
           }
         </style>
-        <marquee direction="scroll">A scrolling text created with HTML Marquee element and styled with CSS properties.</marquee>
+        <marquee direction="scroll">Balanced hiring. Avoid unconscious bias. Guard against adverse impacts.</marquee>
+
+
       </body>
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
              <style>
@@ -46,27 +48,30 @@
 
         <div class="container text-white">
             <h1 class="text-danger text-center my-4" style="font-family: "Comic Sans MS", cursive, sans-serif";>
-                <p class="display-4">ADVERSE IMPACT ANALYSIS</p>
+                <p class="display-4">BALANCED HIRING</p>
             </h1>
             <!-- <a href="https://ibb.co/YbKT9kL"><img src="https://i.ibb.co/wYbrHWz/abc.jpg" alt="abc" border="0"></a> -->
-            <div style="text-align: center"><img src="https://i.ibb.co/wYbrHWz/abc.jpg" alt="Paris" width="600" height="250" class="center" padding-right: 50px;/></div>
-
+            <div style="text-align: center"><img src="https://3s81si1s5ygj3mzby34dq6qf-wpengine.netdna-ssl.com/wp-content/uploads/2018/04/ab_balance-600x381.jpg" alt="Paris" width="600" height="250" class="center" padding-right: 50px;/></div>
+            <br>
+            <br>
+<p><i><mark>INSTRUCTIONS:</mark> There are three categories- Race/Ethnicity, Gender, Age. For each hire, use the hiring pool and potential candidates selected to understand potential unconscious bias and avoid unintentional adverse impacts for candidates and your company. Enter the job title, job level location and projected data of hire. Then input the total number of applicants in the left column and the total number potentially selected in the race/ethnicity, gender, and/or age categories. This tool will calculate four separate tests to understand your balance in hiring for this position. Click compute to understand whether your hiring decisions will cause adverse impacts.
+.</i></p>
 
             <br>
             <br>
 
 
             <center>
-            <div class="dropdown">
+           <!--  <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn" >Click for Instructions</button>
               <div id="myDropdown" class="dropdown-content">
-                <!-- <p class="hover">To calculate it you need to enter text ujnjnjknkkkmijiimkmlkml</p> -->
-                <a href="#">There are three categories- Race/Ethnicity, Gender, Age. Kindly fill the information accordingly.</a>
+                <!- <p class="hover">To calculate it you need to enter text ujnjnjknkkkmijiimkmlkml</p> -->
+                <!-- <a href="#">There are three categories- Race/Ethnicity, Gender, Age. Kindly fill the information accordingly.</a>
                 <a href="#">Once you have entered your data below, you may select the benchmark and the protected group. More than one protected group can be selected.</a>
                 <a href="#">Then press the compute button at the bottom of each section to view results.</a>
                 <a href="#">By clicking on the graph, detailed results will be displayed (with the following reports: Adverse-Impact, Chi-Square/Fisher’s Exact, Standard Deviation, Confidence Interval, Probability Distribution) </a>
               </div>
-            </div>
+            </div> --><!--  -->
             </center>
 
             <style>
@@ -134,44 +139,91 @@
             <br>
 
 
+                        <form>
+                          <div class="row">
+                            <div class="form-group col-12 col-md-6">
+                                <label>Enter Job Title</label>
+                                <input type="text" class="form-control" id="jobTitle" placeholder="">
+                                <small class="form-text text-muted"></small>
+                            </div>
+                            <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                              <label for="exampleFormControlSelect1">Select Job Location</label>
+                              <select class="form-control" id="jobLocation">
+                                <option>Alabama</option>
+                                <option>Alaska</option>
+                                <option>Arizona</option>
+                                <option>Arkansas</option>
+                                <option>California</option>
+                                <option>Colorado</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>Florida</option>
+                                <option>Georgia</option>
+                                <option>Hawaii</option>
+                                <option>Idaho</option>
+                                <option>Illinois</option>
+                                <option>Indiana</option>
+                                <option>Iowa</option>
+                                <option>Kansas</option>
+                                <option>Kentucky</option>
+                                <option>Louisiana</option>
+                                <option>Maine</option>
+                                <option>Maryland</option>
+                                <option>Massachusetts</option>
+                                <option>Michigan</option>
+                                <option>Minnesota</option>
+                                <option>Mississippi</option>
+                                <option>Missouri</option>
+                                <option>Montana</option>
+                                <option>Nebraska</option>
+                                <option>Nevada</option>
+                                <option>New Hampshire</option>
+                                <option>New Jersey</option>
+                                <option>New Mexico</option>
+                                <option>New York</option>
+                                <option>North Carolina</option>
+                                <option>North Dakota</option>
+                                <option>Ohio</option>
+                                <option>Oklahoma</option>
+                                <option>Oregon</option>
+                                <option>Pennsylvania</option>
+                                <option>Rhode Island</option>
+                                <option>South Carolina</option>
+                                <option>South Dakota</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Utah</option>
+                                <option>Vermont</option>
+                                <option>Virginia</option>
+                                <option>Washington</option>
+                                <option>West Virginia</option>
+                                <option>Wisconsin</option>
+                                <option>Wyoming</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class = "row">
+                            <div class="form-group col-12 col-md-6">
+                                <label>Enter Job Level</label>
+                                <input type="text" class="form-control" id="jobLevel" placeholder="">
+                                <small class="form-text text-muted"></small>
+                            </div>
+                            <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
+                                <label>Enter the Date of Hire</label>
+                                <input type="date" class="form-control" id="hireDate" placeholder="">
+                                <small class="form-text text-muted"></small>
+                            </div>
+                          </div>
+                        </form>
+
+                        <br>
+                        <br>
+                        <br>
+
+
             <!-- <h5 class="text-left mt-5 mb-3 text-success">Enter the Data</h5> -->
             <h3 class="text-center mt-2 mb-3 text-warning">RACE/ETHNICITY</h3>
 
-            <form>
-              <div class="row">
-                <div class="form-group col-12 col-md-6">
-                    <label>Enter Job Title</label>
-                    <input type="text" class="form-control" id="jobTitle" placeholder="">
-                    <small class="form-text text-muted"></small>
-                </div>
-                <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
-                  <label for="exampleFormControlSelect1">Select Job Location</label>
-                  <select class="form-control" id="jobLocation">
-                    <option>California</option>
-                    <option>San Diego</option>
-                    <option>San Francisco</option>
-                    <option>New York</option>
-                    <option>Los Angeles</option>
-                  </select>
-                </div>
-              </div>
-              <div class = "row">
-                <div class="form-group col-12 col-md-6">
-                    <label>Enter Job Level</label>
-                    <input type="text" class="form-control" id="jobLevel" placeholder="">
-                    <small class="form-text text-muted"></small>
-                </div>
-                <div class="form-group col-12 col-md-6 mt-2 mt-md-0">
-                    <label>Enter the Date of Hire</label>
-                    <input type="date" class="form-control" id="hireDate" placeholder="">
-                    <small class="form-text text-muted"></small>
-                </div>
-              </div>
-            </form>
-
-            <br>
-            <br>
-            <br>
 
             <form>
                 <div class="row">
@@ -271,11 +323,11 @@
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="radio" name="benchmark" id="checkHispanic" value="3">
-                            <label class="form-check-label" for="checkHispanic">Hispanic or Latinos</label>
+                            <label class="form-check-label" for="checkHispanic">Hispanic or Latino</label>
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="radio" name="benchmark" id="checkHawaiian" value="4">
-                            <label class="form-check-label" for="checkHawaiian">Native Hawaiian</label>
+                            <label class="form-check-label" for="checkHawaiian">Native Hawaiian or Pacific Islander</label>
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="radio" name="benchmark" id="checkAsian" value="5">
@@ -304,11 +356,11 @@
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="checkbox" name="protected" id="checkHispanicP" value="3">
-                            <label class="form-check-label" for="checkHispanicP">Hispanic or Latinos</label>
+                            <label class="form-check-label" for="checkHispanicP">Hispanic or Latino</label>
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="checkbox" name="protected" id="checkHawaiianP" value="4">
-                            <label class="form-check-label" for="checkHawaiianP">Native Hawaiian</label>
+                            <label class="form-check-label" for="checkHawaiianP">Native Hawaiian or Pacific Islander</label>
                         </div>
                         <div class="col-auto col-lg-4">
                             <input type="checkbox" name="protected" id="checkAsianP" value="5">
@@ -342,15 +394,15 @@
                         <div class="row mb-5 d-none" id="results">
                             <div class="col">
                                 <h2 class="text-danger text-center">Results</h2>
-                                <h5 class="text-left mt-3 text-success">Adverse-Impact Report: <span class="text-white" id="aiReport">00.00</span></h5>
+                                <h5 class="text-left mt-3 text-success">4/5th Rule: <span class="text-white" id="aiReport">00.00</span></h5>
                                 <br>
-                                <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReport">00.00</span></h5>
+                                <h5 class="text-left mt-3 text-success">Chi-Square Test: <span class="text-white" id="csReport">00.00</span></h5>
                                 <br>
-                                <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReport">00.00</span></h5>
+                                <h5 class="text-left mt-3 text-success">Standard-Deviation Test: <span class="text-white" id="sdReport">00.00</span></h5>
                                 <br>
-                                <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReport">00.00</span></h5>
+                                <h5 class="text-left mt-3 text-success">Confidence Interval Test: <span class="text-white" id="ciReport">00.00</span></h5>
                                 <br>
-                                <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReport">00.00</span></h5>
+                                <h5 class="text-left mt-3 text-success">Probability Distribution Test: <span class="text-white" id="pdReport">00.00</span></h5>
                                 <br>
                             </div>
                         </div>

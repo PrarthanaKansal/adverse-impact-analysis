@@ -975,18 +975,27 @@ toggle between hiding and showing the dropdown content */
         }
 
         h.style.textAlign = "center";
-        h.style.margin = "20px";
+        h.style.padding = "10px";
+        h.style.marginTop = "15%";
         parent.insertAfter(h,refElem);
 
 
 
         var box = document.createElement("BUTTON");
         box.innerHTML = "4/5th Rule";
-        box.style.background = "magenta";
-        box.style.width = "20%";
+        var aiArray = data.aiArray;
+        if(aiArray[i]){
+          box.style.background = "red";
+        }
+        else{
+          box.style.background = "lightgreen";
+        }
+
+        box.style.width = "48%";
         box.style.height = "100px";
         box.style.borderRadius  = "10px";
-        box.style.margin = "20px";
+        box.style.marginRight = "2%";
+        // box.style.marginLeft = "28%";
         box.id="AI"+i.toString();
         var refElem = document.getElementById("H"+i.toString());
         var parent = refElem.parentNode;
@@ -999,14 +1008,21 @@ toggle between hiding and showing the dropdown content */
         ai = aiEnd;
         console.log(aiReport.substring(aiStart,aiEnd));
 
-
+        var csArray = data.csArray;
         var box2 = document.createElement("BUTTON");
         box2.innerHTML = "Chi-Square Test";
-        box2.style.background = "magenta";
-        box2.style.width = "20%";
+        if(csArray[i]){
+          box2.style.background = "red";
+        }
+        else{
+          box2.style.background = "lightgreen";
+        }
+        box2.style.width = "48%";
         box2.style.height = "100px";
         box2.style.borderRadius  = "10px";
-        box2.style.margin = "20px";
+        // box2.style.marginRight = "28%";
+        box2.style.marginLeft = "2%"
+        box2.style.marginTop = "50px";
         box2.id="CS"+i.toString();
         var refElem = document.getElementById("AI"+i.toString());
         var parent = refElem.parentNode;
@@ -1019,14 +1035,20 @@ toggle between hiding and showing the dropdown content */
         cs = csEnd;
         console.log(csReport.substring(csStart,csEnd));
 
-
+        var sdArray = data.sdArray;
         var box3 = document.createElement("BUTTON");
         box3.innerHTML = "Standard Deviation Test";
-        box3.style.background = "magenta";
-        box3.style.width = "20%";
+        if(sdArray[i]){
+          box3.style.background = "red";
+        }
+        else{
+          box3.style.background = "lightgreen";
+        }
+        box3.style.width = "48%";
         box3.style.height = "100px";
         box3.style.borderRadius  = "10px";
-        box3.style.margin = "20px";
+        box3.style.marginRight = "2%";
+        box3.style.marginTop = "2%";
         box3.id="SD"+i.toString();
         var refElem = document.getElementById("CS"+i.toString());
         var parent = refElem.parentNode;
@@ -1039,14 +1061,19 @@ toggle between hiding and showing the dropdown content */
         sd = sdEnd;
         console.log(sdReport.substring(sdStart,sdEnd));
 
-
+        var ciArray = data.ciArray;
         var box4 = document.createElement("BUTTON");
         box4.innerHTML = "Confidence Interval Test";
-        box4.style.background = "magenta";
-        box4.style.width = "20%";
+        if(ciArray[i]){
+          box4.style.background = "red";
+        }
+        else{
+          box4.style.background = "lightgreen";
+        }
+        box4.style.width = "48%";
         box4.style.height = "100px";
         box4.style.borderRadius  = "10px";
-        box4.style.margin = "20px";
+        box4.style.marginLeft = "2%";
         box4.id="CI"+i.toString();
         var refElem = document.getElementById("SD"+i.toString());
         var parent = refElem.parentNode;
@@ -1258,18 +1285,25 @@ toggle between hiding and showing the dropdown content */
 
 
         h.style.textAlign = "center";
-        h.style.margin = "20px";
+        h.style.marginTop = "15%";
+        h.style.padding = "10px";
         parent.insertAfter(h,refElem);
 
 
 
         var box = document.createElement("BUTTON");
         box.innerHTML = "4/5th Rule";
-        box.style.background = "magenta";
-        box.style.width = "20%";
+        var aiArray = data.aiArray;
+        if(aiArray[i]){
+          box.style.background = "red";
+        }
+        else{
+          box.style.background = "lightgreen";
+        }
+        box.style.width = "48%";
         box.style.height = "100px";
         box.style.borderRadius  = "10px";
-        box.style.margin = "20px";
+        box.style.marginRight = "2%";
         box.id="AIGender"+i.toString();
         var refElem = document.getElementById("HGender"+i.toString());
         var parent = refElem.parentNode;
@@ -1285,11 +1319,19 @@ toggle between hiding and showing the dropdown content */
 
         var box2 = document.createElement("BUTTON");
         box2.innerHTML = "Chi-Square Test";
-        box2.style.background = "magenta";
-        box2.style.width = "20%";
+        var csArray = data.csArray;
+        if(csArray[i]){
+          box2.style.background = "red";
+        }
+        else{
+          box2.style.background = "lightgreen";
+        }
+        box2.style.width = "48%";
         box2.style.height = "100px";
         box2.style.borderRadius  = "10px";
-        box2.style.margin = "20px";
+        // box2.style.marginRight = "28%";
+        box2.style.marginLeft = "2%"
+        box2.style.marginTop = "50px";
         box2.id="CSGender"+i.toString();
         var refElem = document.getElementById("AIGender"+i.toString());
         var parent = refElem.parentNode;
@@ -1305,11 +1347,18 @@ toggle between hiding and showing the dropdown content */
 
         var box3 = document.createElement("BUTTON");
         box3.innerHTML = "Standard Deviation Test";
-        box3.style.background = "magenta";
-        box3.style.width = "20%";
+        var sdArray = data.sdArray;
+        if(sdArray[i]){
+          box3.style.background = "red";
+        }
+        else{
+          box3.style.background = "lightgreen";
+        }
+        box3.style.width = "48%";
         box3.style.height = "100px";
         box3.style.borderRadius  = "10px";
-        box3.style.margin = "20px";
+        box3.style.marginRight = "2%";
+        box3.style.marginTop = "2%";
         box3.id="SDGender"+i.toString();
         var refElem = document.getElementById("CSGender"+i.toString());
         var parent = refElem.parentNode;
@@ -1325,11 +1374,17 @@ toggle between hiding and showing the dropdown content */
 
         var box4 = document.createElement("BUTTON");
         box4.innerHTML = "Confidence Interval Test";
-        box4.style.background = "magenta";
-        box4.style.width = "20%";
+        var ciArray = data.ciArray;
+        if(ciArray[i]){
+          box4.style.background = "red";
+        }
+        else{
+          box4.style.background = "lightgreen";
+        }
+        box4.style.width = "48%";
         box4.style.height = "100px";
         box4.style.borderRadius  = "10px";
-        box4.style.margin = "20px";
+        box4.style.marginLeft = "2%";
         box4.id="CIGender"+i.toString();
         var refElem = document.getElementById("SDGender"+i.toString());
         var parent = refElem.parentNode;
@@ -1544,18 +1599,25 @@ toggle between hiding and showing the dropdown content */
 
 
         h.style.textAlign = "center";
-        h.style.margin = "20px";
+        h.style.marginTop = "15%";
+        h.style.padding = "10px";
         parent.insertAfter(h,refElem);
 
 
 
         var box = document.createElement("BUTTON");
         box.innerHTML = "4/5th Rule";
-        box.style.background = "magenta";
-        box.style.width = "20%";
+        var aiArray = data.aiArray;
+        if(aiArray[i]){
+          box.style.background = "red";
+        }
+        else{
+          box.style.background = "lightgreen";
+        }
+        box.style.width = "48%";
         box.style.height = "100px";
         box.style.borderRadius  = "10px";
-        box.style.margin = "20px";
+        box.style.marginRight = "2%";
         box.id="AIAge"+i.toString();
         var refElem = document.getElementById("HAge"+i.toString());
         var parent = refElem.parentNode;
@@ -1571,11 +1633,19 @@ toggle between hiding and showing the dropdown content */
 
         var box2 = document.createElement("BUTTON");
         box2.innerHTML = "Chi-Square Test";
-        box2.style.background = "magenta";
-        box2.style.width = "20%";
+        var csArray = data.csArray;
+        if(csArray[i]){
+          box2.style.background = "red";
+        }
+        else{
+          box2.style.background = "lightgreen";
+        }
+        box2.style.width = "48%";
         box2.style.height = "100px";
         box2.style.borderRadius  = "10px";
-        box2.style.margin = "20px";
+        // box2.style.marginRight = "28%";
+        box2.style.marginLeft = "2%"
+        box2.style.marginTop = "50px";
         box2.id="CSAge"+i.toString();
         var refElem = document.getElementById("AIAge"+i.toString());
         var parent = refElem.parentNode;
@@ -1591,11 +1661,18 @@ toggle between hiding and showing the dropdown content */
 
         var box3 = document.createElement("BUTTON");
         box3.innerHTML = "Standard Deviation Test";
-        box3.style.background = "magenta";
-        box3.style.width = "20%";
+        var sdArray = data.sdArray;
+        if(sdArray[i]){
+          box3.style.background = "red";
+        }
+        else{
+          box3.style.background = "lightgreen";
+        }
+        box3.style.width = "48%";
         box3.style.height = "100px";
         box3.style.borderRadius  = "10px";
-        box3.style.margin = "20px";
+        box3.style.marginRight = "2%";
+        box3.style.marginTop = "2%";
         box3.id="SDAge"+i.toString();
         var refElem = document.getElementById("CSAge"+i.toString());
         var parent = refElem.parentNode;
@@ -1611,11 +1688,17 @@ toggle between hiding and showing the dropdown content */
 
         var box4 = document.createElement("BUTTON");
         box4.innerHTML = "Confidence Interval Test";
-        box4.style.background = "magenta";
-        box4.style.width = "20%";
+        var ciArray = data.ciArray;
+        if(ciArray[i]){
+          box4.style.background = "red";
+        }
+        else{
+          box4.style.background = "lightgreen";
+        }
+        box4.style.width = "48%";
         box4.style.height = "100px";
         box4.style.borderRadius  = "10px";
-        box4.style.margin = "20px";
+        box4.style.marginLeft = "2%";
         box4.id="CIAge"+i.toString();
         var refElem = document.getElementById("SDAge"+i.toString());
         var parent = refElem.parentNode;

@@ -63,7 +63,7 @@ pass
 
 def boolforchiSquare(minoritySelected, majoritySelected, minority, majority):
     boolchiSquare = False
-    boolchiSquare = True
+
     minorityNotSelected = minority - minoritySelected  # d
     majorityNotSelected = majority - majoritySelected  # b
     N = majority + minority  # majoritySelected a
@@ -89,6 +89,7 @@ def boolforchiSquare(minoritySelected, majoritySelected, minority, majority):
     # else:
     #     answer = answer + "<br> Chi square : NaN"
     #     answer = answer + "<br> Absence of bias"
+    print(boolchiSquare)
     return boolchiSquare
 
 def boolforchiFisher(minoritySelected, majoritySelected, minority, majority):
@@ -185,18 +186,16 @@ def fact(x):
         result *= num
     return result
 
-#if((majority<=26) && (minority<=26) && (majoritySelected<26) && (minoritySelected <26)):
-    #print('Fisher Exact___________')
-    #print('FisherExact: '+ str(fisherexact(minoritySelected, majoritySelected, minority, majority)))
+
 def boolforchiSquareOrFisherExact(minoritySelected, majoritySelected, minority, majority):
     if(minoritySelected < 5 or majoritySelected < 5):
-        boolforchiFisher(minoritySelected, majoritySelected, minority, majority)
+        return boolforchiFisher(minoritySelected, majoritySelected, minority, majority)
 
     else:
-        boolforchiSquare(minoritySelected, majoritySelected, minority, majority)
+        return boolforchiSquare(minoritySelected, majoritySelected, minority, majority)
 
-def boolforSD(a):
-    boolSD = True
+def boolforSD(minoritySelected, majoritySelected, minority, majority):
+    boolSD = False
     y = SD(minoritySelected, majoritySelected, minority, majority)
     n2 = minority + majority
     p = minority / n2
@@ -268,7 +267,7 @@ def StandardDevReport(minoritySelected, majoritySelected, minority, majority):
                 answer += " <font color = red>These results show that the difference between the two groups differ more than what could be attributed to standard deviation or chance. This negative finding may cause an evaluation of the total scope of the procedures informing hiring decisions to allow adjustments away from disparate impact vulnerabilities. </font>"
                 #These results show no sigificant change. Hence, its not a result of bias.
         elif sd == 0:
-            answer = answer + "<br> NaN"
+            answer = answer + "<br> These results show that any difference between the two groups may be attributed to standard deviation or chance. This positive finding will support procedures informing hiring decisions but the company should continue to monitor disparate impact vulnerabilities."
     else:
         answer = answer + "<br> The standard deviation is: NaN. These results show that any difference between the two groups may be attributed to standard deviation or chance. This positive finding will support procedures informing hiring decisions but the company should continue to monitor disparate impact vulnerabilities. "
     return answer
@@ -294,7 +293,7 @@ def boolforCI(minoritySelected, majoritySelected, minority, majority):
     # print(ratio)
     lb = p - (1.96 * sd)
     ub = p + (1.96 * sd)
-    is_CI_bool(lb, ub, ratio)
+    return is_CI_bool(lb, ub, ratio)
 
 
 

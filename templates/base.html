@@ -132,6 +132,32 @@
 
           /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
           .show {display:block;}
+
+
+          #myDIV {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+          }
+
+          #myDIVAge {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+          }
+
+          #myDIVGender {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+          }
+
           </style>
 
 
@@ -382,50 +408,19 @@
                     </div>
                 </div>
 
-                <!-- <div class="row mb-5 d-none" id="results"> -->
-                    <!-- <div class="col"> -->
+                <div class="row mb-5 d-none" id="results">
 
-
-                        <!-- <h2 class="text-danger text-center">Results</h2> -->
-                        <!-- Graph -->
-                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                        <!-- <button type="submit" class="btn btn-primary btn-lg mt-4 mb-5 w-50" onclick="moreInfo(event);">Click for more info </button> -->
-                        <div class="row mb-5 d-none" id="results">
-                            <div class="col">
-                                <h2 class="text-danger text-center">Results</h2>
-                                <h5 class="text-left mt-3 text-success">4/5th Rule: <span class="text-white" id="aiReport">00.00</span></h5>
-                                <br>
-                                <h5 class="text-left mt-3 text-success">Chi-Square Test: <span class="text-white" id="csReport">00.00</span></h5>
-                                <br>
-                                <h5 class="text-left mt-3 text-success">Standard-Deviation Test: <span class="text-white" id="sdReport">00.00</span></h5>
-                                <br>
-                                <h5 class="text-left mt-3 text-success">Confidence Interval Test: <span class="text-white" id="ciReport">00.00</span></h5>
-                                <br>
-                                <h5 class="text-left mt-3 text-success">Probability Distribution Test: <span class="text-white" id="pdReport">00.00</span></h5>
-                                <br>
+                        <div class="column">
+                            <h2 class="text-danger text-center">Results</h2>
+                            <div id="myDIV">
+                              This is my DIV element.
                             </div>
+
+
+
                         </div>
-
-                      <!-- <div class="row mb-5 d-none" id="resultAdverse">
-                        <h5 class="text-left mt-3 text-success">Adverse-Impact Report: <span class="text-white" id="aiReport">00.00</span></h5>
-                      </div>
-                      <div class="row mb-5 d-none" id="resultChi">
-                        <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReport">00.00</span></h5>
-                      </div>
-                      <div class="row mb-5 d-none" id="resultDev">
-                        <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReport">00.00</span></h5>
-                      </div>
-                      <div class="row mb-5 d-none" id="resultConfidence">
-                        <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReport">00.00</span></h5>
-                      </div>
-                      <div class="row mb-5 d-none" id="resultPD">
-                        <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReport">00.00</span></h5> -->
-                     <!-- </div> -->
-
-
-                <!-- </div> -->
-            </form>
+                    </div>
+                </form>
 
 
 
@@ -510,6 +505,15 @@
                     </div>
                 </div>
                 <div class="row mb-5 d-none" id="resultsGender">
+
+                        <div class="column">
+                            <h2 class="text-danger text-center">Results</h2>
+                            <div id="myDIVGender">
+                              This is my DIV element.
+                            </div>
+                          </div>
+                    </div>
+                <!-- <div class="row mb-5 d-none" id="resultsGender">
                     <div class="col">
                         <h2 class="text-danger text-center">Results</h2>
                         <h5 class="text-left mt-3 text-success">Adverse-Impact Report: <span class="text-white" id="aiReportGender">00.00</span></h5>
@@ -518,7 +522,7 @@
                         <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReportGender">00.00</span></h5>
                         <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReportGender">00.00</span></h5>
                     </div>
-                </div>
+                </div> -->
             </form>
 
 
@@ -585,15 +589,14 @@
                     </div>
                 </div>
                 <div class="row mb-5 d-none" id="resultsAge">
-                    <div class="col">
-                        <h2 class="text-danger text-center">Results</h2>
-                        <h5 class="text-left mt-3 text-success">Adverse-Impact Report: <span class="text-white" id="aiReportAge">00.00</span></h5>
-                        <h5 class="text-left mt-3 text-success">Chi-Square Report: <span class="text-white" id="csReportAge">00.00</span></h5>
-                        <h5 class="text-left mt-3 text-success">Standard-Deviation Report: <span class="text-white" id="sdReportAge">00.00</span></h5>
-                        <h5 class="text-left mt-3 text-success">Confidence Interval Report: <span class="text-white" id="ciReportAge">00.00</span></h5>
-                        <h5 class="text-left mt-3 text-success">Probability Distribution Report: <span class="text-white" id="pdReportAge">00.00</span></h5>
+
+                        <div class="column">
+                            <h2 class="text-danger text-center">Results</h2>
+                            <div id="myDIVAge">
+                              This is my DIV element.
+                            </div>
+                          </div>
                     </div>
-                </div>
             </form>
 
         </div>
@@ -606,6 +609,15 @@
             var sendData = null;
 
             var raceNumber = null;
+
+            var race = document.getElementById("myDIV");
+            race.style.display = "none";
+
+            var gender = document.getElementById("myDIVGender");
+            gender.style.display = "none";
+
+            var age = document.getElementById("myDIVAge");
+            age.style.display = "none";
 
 
 
@@ -842,8 +854,8 @@
                               });
                               protectedId = searchIDs;
                               protectedId = JSON.stringify(protectedId);
-                              console.log("OK");
-                              console.log(protectedId);
+                              // console.log("OK");
+                              // console.log(protectedId);
                             }
 
 
@@ -874,13 +886,13 @@
                         },
                          data: sendData,
                         success: function(result){
-                          console.log("IN SUCCESS Race");
+                          //console.log("IN SUCCESS Race");
                             if(result['error']) {
-                              console.log("error");
+                              //console.log("error");
                                 compute(e);
                             }
                             else{
-                              console.log("IN SUCCESS");
+                            //  console.log("IN SUCCESS");
                                 populateData(result);
                                 sendData = null;
                             }
@@ -897,7 +909,7 @@
 
                 var totalWhites = parseFloat($("#totalWhites").val()== "" ? 0 : $("#totalWhites").val());
                 var selectedWhites = parseFloat($("#selectedWhites").val()== "" ? 0 : $("#selectedWhites").val());
-                console.log(totalWhites);
+                //console.log(totalWhites);
 
                 var totalBlacks = parseFloat($("#totalBlacks").val()== "" ? 0 : $("#totalBlacks").val());
                 var selectedBlacks = parseFloat($("#selectedBlacks").val()== "" ? 0 : $("#selectedBlacks").val());
@@ -1067,76 +1079,187 @@
             }
 
             function populateData(data) {
-              console.log("yes");
-              var chart = new CanvasJS.Chart("chartContainer", {
-            	animationEnabled: true,
 
-              theme: "dark1",
-            	title:{
-            		text: "Total no. of Applicants vs Selected no. of Applicants",
-                itemclick: toggleDataSeries
-            	},
-            	axisY: {
-            		title: "Number of applicants",
-            		titleFontColor: "#4F81BC",
-            		lineColor: "#4F81BC",
-            		labelFontColor: "#4F81BC",
-            		tickColor: "#4F81BC",
-                itemclick: toggleDataSeries
-            	},
-            	toolTip: {
-            		shared: true
-            	},
-            	legend: {
-            		cursor:"pointer",
-            		itemclick: toggleDataSeries
-            	},
-            	data: [{
-            		type: "column",
-            		name: "Total number of Applicants",
-            		legendText: "Total number of Applicants",
-                itemclick: toggleDataSeries,
+              var aiReport = data.aiReport;
+              var csReport = data.csReport;
+              var sdReport = data.sdReport;
+              var ciReport = data.ciReport;
+              //console.log(aiReport);
 
-            		showInLegend: true,
-            		dataPoints:[
-            			{ label: "White", y:parseFloat($("#totalWhites").val() == "" ? 0 : $("#totalWhites").val()) },
-            			{ label: "Black or African American", y:parseFloat($("#totalBlacks").val() == "" ? 0 : $("#totalBlacks").val()) },
-            			{ label: "Hispanic or Latino", y:parseFloat($("#totalHispanics").val() == "" ? 0 : $("#totalHispanics").val()) },
-            			{ label: "Native Hawaiian or Pacific Islander", y:parseFloat($("#totalHawaiians").val() == "" ? 0 : $("#totalHawaiians").val()) },
-            			{ label: "Asian", y:parseFloat($("#totalAsians").val() == "" ? 0 : $("#totalAsians").val()) },
-            			{ label: "Native American or Alaska Native", y:parseFloat($("#totalAmericans").val() == "" ? 0 : $("#totalAmericans").val()) },
-                  { label: "Two or more Races", y:parseFloat($("#totalTows").val() == "" ? 0 : $("#totalTows").val()) }
-            		]
-            	},
-            	{
-            		type: "column",
-            		name: "Selected number of Applicants",
-            		legendText: "Selected number of Applicants",
-            		//axisYType: "secondary",
-            		showInLegend: true,
-                itemclick: toggleDataSeries,
-            		dataPoints:[
-            			{ label: "White", y:parseFloat($("#selectedWhites").val() == "" ? 0 : $("#selectedWhites").val()) },
-            			{ label: "Black or African American", y:parseFloat($("#selectedBlacks").val() == "" ? 0 : $("#selectedBlacks").val())},
-            			{ label: "Hispanic or Latino", y:parseFloat($("#selectedHispanics").val() == "" ? 0 : $("#selectedHispanics").val()) },
-            			{ label: "Native Hawaiian or Pacific Islander", y:parseFloat($("#selectedHawaiians").val() == "" ? 0 : $("#selectedHawaiians").val()) },
-            			{ label: "Asian", y:parseFloat($("#selectedAsians").val() == "" ? 0 : $("#selectedAsians").val())},
-            			{ label: "Native American or Alaska Native", y:parseFloat($("#selectedAmericans").val() == "" ? 0 : $("#selectedAmericans").val())},
-                  { label: "Two or more Races", y:parseFloat($("#selectedTows").val() == "" ? 0 : $("#selectedTows").val()) }
-            		]
-            	}]
-            });
-            chart.render();
-            // chart.onclick = function(evt){
-            //       alert("Clicked Graph");
-            //       // => activePoints is an array of points on the canvas that are at the same position as the click event.
-            //   };
-            function toggleDataSeries(e) {
-                $("#aiReport").html(data.aiReport);
-                $("#csReport").html(data.csReport);
-                $("#sdReport").html(data.sdReport);
-                $("#ciReport").html(data.ciReport);
-                $("#pdReport").html(data.pdReport);
+              Node.prototype.insertAfter = function(newNode, referenceNode) {
+                  return referenceNode.parentNode.insertBefore(
+                      newNode, referenceNode.nextSibling);
+              };
+
+              var searchIDs = [];
+              $("#protected-form input:checkbox:checked").map(function(){
+                searchIDs.push($(this).val());
+              });
+              var refElem = document.getElementById("results");
+              var parent = refElem.parentNode;
+
+              var i;
+              var ai = 0;
+              var aiStartList = [];
+              var aiEndList = [];
+
+              var cs = 0;
+              var csStartList = [];
+              var csEndList = [];
+
+              var sd = 0;
+              var sdStartList = [];
+              var sdEndList = [];
+
+              var ci = 0;
+              var ciStartList = [];
+              var ciEndList = [];
+
+              for(i=0; i<searchIDs.length;i++ ){
+
+                var h = document.createElement("H5");
+                h.style.width = "100%";
+                h.style.height = "50px";
+                h.style.backgroundColor = "orange";
+                h.style.borderRadius  = "10px";
+                h.id="H"+i.toString();
+                if(searchIDs[i]==1){
+                  h.innerHTML = "For Protected Group: White "
+                }
+                else if (searchIDs[i]==2) {
+                  h.innerHTML = "For Protected Group: Black or African American"
+                }
+                else if (searchIDs[i]==3) {
+                  h.innerHTML = "For Protected Group: Hispanic or Latino "
+                }
+                else if (searchIDs[i]==4) {
+                  h.innerHTML = "For Protected Group: Native Hawaiian or Pacific Islander"
+                }
+                else if (searchIDs[i]==5) {
+                  h.innerHTML = "For Protected Group: Asian "
+                }
+                else if (searchIDs[i]==6) {
+                  h.innerHTML = "For Protected Group: Native American or Alaska Native"
+                }
+                else if (searchIDs[i]==7) {
+                  h.innerHTML = "For Protected Group: Two or more races "
+                }
+
+                h.style.textAlign = "center";
+                h.style.margin = "20px";
+                parent.insertAfter(h,refElem);
+
+
+
+                var box = document.createElement("BUTTON");
+                box.innerHTML = "4/5th Rule";
+                box.style.background = "magenta";
+                box.style.width = "20%";
+                box.style.height = "100px";
+                box.style.borderRadius  = "10px";
+                box.style.margin = "20px";
+                box.id="AI"+i.toString();
+                var refElem = document.getElementById("H"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box, refElem);
+                var aiStart = aiReport.indexOf("Based",ai);
+                var aiEnd = aiReport.indexOf("vulnerabilities",ai);
+                aiEnd += 15;
+                aiStartList.push(aiStart);
+                aiEndList.push(aiEnd);
+                ai = aiEnd;
+                console.log(aiReport.substring(aiStart,aiEnd));
+
+
+                var box2 = document.createElement("BUTTON");
+                box2.innerHTML = "Chi-Square Test";
+                box2.style.background = "magenta";
+                box2.style.width = "20%";
+                box2.style.height = "100px";
+                box2.style.borderRadius  = "10px";
+                box2.style.margin = "20px";
+                box2.id="CS"+i.toString();
+                var refElem = document.getElementById("AI"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box2, refElem);
+                var csStart = csReport.indexOf("The",cs);
+                var csEnd = csReport.indexOf("bias",cs);
+                csEnd +=5;
+                csStartList.push(csStart);
+                csEndList.push(csEnd);
+                cs = csEnd;
+                console.log(csReport.substring(csStart,csEnd));
+
+
+                var box3 = document.createElement("BUTTON");
+                box3.innerHTML = "Standard Deviation Test";
+                box3.style.background = "magenta";
+                box3.style.width = "20%";
+                box3.style.height = "100px";
+                box3.style.borderRadius  = "10px";
+                box3.style.margin = "20px";
+                box3.id="SD"+i.toString();
+                var refElem = document.getElementById("CS"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box3, refElem);
+                var sdStart = sdReport.indexOf("The",sd);
+                var sdEnd = sdReport.indexOf("vulnerabilities",sd);
+                sdEnd += 15;
+                sdStartList.push(sdStart);
+                sdEndList.push(sdEnd);
+                sd = sdEnd;
+                console.log(sdReport.substring(sdStart,sdEnd));
+
+
+                var box4 = document.createElement("BUTTON");
+                box4.innerHTML = "Confidence Interval Test";
+                box4.style.background = "magenta";
+                box4.style.width = "20%";
+                box4.style.height = "100px";
+                box4.style.borderRadius  = "10px";
+                box4.style.margin = "20px";
+                box4.id="CI"+i.toString();
+                var refElem = document.getElementById("SD"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box4, refElem);
+                var ciStart = ciReport.indexOf("The",ci);
+                var ciEnd = ciReport.indexOf("vulnerabilities",ci);
+                ciEnd += 15;
+                ciStartList.push(ciStart);
+                ciEndList.push(ciEnd);
+                ci = ciEnd;
+
+                var linebreak = document.createElement("br");
+                linebreak.id = "linebreak"+i.toString();
+                var refElem = document.getElementById("CI"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(linebreak, refElem);
+
+                var refElem = document.getElementById("linebreak"+i.toString());
+                var parent = refElem.parentNode;
+
+
+              }
+
+              var k;
+              for(k=0; k<searchIDs.length;k++ ){
+                //element.addEventListener("click", function(){ alert("Hello World!"); });
+
+                var id = "AI"+k.toString();
+              //  var aaa = document.getElementById(id);
+                document.getElementById(id).onmouseover = getClickCallbackAI(k, aiReport, aiStartList, aiEndList);
+              //  aaa.onclick = getClickCallbackAI(k, aiReport, aiStartList, aiEndList);
+
+                var id = "CS"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackCS(k, csReport, csStartList, csEndList);
+
+                var id = "SD"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackSD(k, sdReport, sdStartList, sdEndList);
+
+                var id = "CI"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackCI(k, ciReport, ciStartList, ciEndList);
+
+              }
 
                 formatAdverseImpact(data.aiReport);
                 formatAdverseImpact(data.csReport);
@@ -1147,45 +1270,290 @@
                 $('html, body').animate({
                     scrollTop: $("#results").offset().top
                 }, 1000);
-              }
 
-
-                $("#chartContainer").removeClass('d-none')
-                $('html, body').animate({
-                    scrollTop: $("#chartContainer").offset().top
-                }, 1000);
-
-                $("#chartContainer").click(function(e) {
-                 toggleDataSeries(e);
-});
             }
 
-            // function moreInfo(e){
-            //   $("#aiReport").html(data.aiReport);
-            //   $("#csReport").html(data.csReport);
-            //   $("#sdReport").html(data.sdReport);
-            //   $("#ciReport").html(data.ciReport);
-            //   $("#pdReport").html(data.pdReport);
-            //
-            //   formatAdverseImpact(data.aiReport);
-            //   formatAdverseImpact(data.csReport);
-            //   formatAdverseImpact(data.sdReport);
-            //   formatAdverseImpact(data.ciReport);
-            //   formatAdverseImpact(data.pdReport);
-            //   $("#results").removeClass('d-none')
-            //   $('html, body').animate({
-            //       scrollTop: $("#results").offset().top
-            //   }, 1000);
-            // }
+            function getClickCallbackAI(i, aiReport, aiStartList, aiEndList) {
+              return function() {
+                var id = "AI"+i.toString();
+                var ai = document.getElementById("myDIV");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIV").innerHTML=aiReport.substring(aiStartList[i],aiEndList[i]);
+                if (ai.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    ai.style.opacity = 1;
+                    ai.style.transform = 'scale(1)';
+                    ai.style.display = 'block';
+                    // $('html, body').animate({
+                    //     scrollTop: $("#results").offset().top
+                    // }, 1000);
+                  },700);
+                } else {
+                  ai.style.opacity = 0;
+                  ai.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    ai.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+            function getClickCallbackCS(i, csReport, csStartList, csEndList) {
+              return function() {
+                var id = "CS"+i.toString();
+                var cs = document.getElementById("myDIV");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIV").innerHTML=csReport.substring(csStartList[i],csEndList[i]);
+                if (cs.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    cs.style.opacity = 1;
+                    cs.style.transform = 'scale(1)';
+                    cs.style.display = 'block';
+                  },700);
+                } else {
+                  cs.style.opacity = 0;
+                  cs.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    cs.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+            function getClickCallbackSD(i, sdReport, sdStartList, sdEndList) {
+              return function() {
+                var id = "SD"+i.toString();
+                var sd = document.getElementById("myDIV");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIV").innerHTML=sdReport.substring(sdStartList[i],sdEndList[i]);
+                if (sd.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    sd.style.opacity = 1;
+                    sd.style.transform = 'scale(1)';
+                    sd.style.display = 'block';
+                  },700);
+                } else {
+                  sd.style.opacity = 0;
+                  sd.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    sd.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+            function getClickCallbackCI(i, ciReport, ciStartList, ciEndList) {
+              return function() {
+                var id = "CI"+i.toString();
+                var ci = document.getElementById("myDIV");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIV").innerHTML=ciReport.substring(ciStartList[i],ciEndList[i]);
+                if (ci.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    ci.style.opacity = 1;
+                    ci.style.transform = 'scale(1)';
+                    ci.style.display = 'block';
+                  },700);
+                } else {
+                  ci.style.opacity = 0;
+                  ci.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    ci.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
 
             function populateDataGender(data) {
-              console.log("yes");
+              var aiReport = data.aiReport;
+              var csReport = data.csReport;
+              var sdReport = data.sdReport;
+              var ciReport = data.ciReport;
+              //console.log(aiReport);
 
-                $("#aiReportGender").html(data.aiReport);
-                $("#csReportGender").html(data.csReport);
-                $("#sdReportGender").html(data.sdReport);
-                $("#ciReportGender").html(data.ciReport);
-                $("#pdReportGender").html(data.pdReport);
+              Node.prototype.insertAfter = function(newNode, referenceNode) {
+                  return referenceNode.parentNode.insertBefore(
+                      newNode, referenceNode.nextSibling);
+              };
+
+              var searchIDs = [];
+              $("#protected-form-gender input:checkbox:checked").map(function(){
+                searchIDs.push($(this).val());
+              });
+              var refElem = document.getElementById("resultsGender");
+              var parent = refElem.parentNode;
+
+              var i;
+              var ai = 0;
+              var aiStartList = [];
+              var aiEndList = [];
+
+              var cs = 0;
+              var csStartList = [];
+              var csEndList = [];
+
+              var sd = 0;
+              var sdStartList = [];
+              var sdEndList = [];
+
+              var ci = 0;
+              var ciStartList = [];
+              var ciEndList = [];
+
+              for(i=0; i<searchIDs.length;i++ ){
+
+                var h = document.createElement("H5");
+                h.style.width = "100%";
+                h.style.height = "50px";
+                h.style.backgroundColor = "orange";
+                h.style.borderRadius  = "10px";
+                h.id="HGender"+i.toString();
+                if(searchIDs[i]==1){
+                  h.innerHTML = "For Protected Group: Male "
+                }
+                else if (searchIDs[i]==2) {
+                  h.innerHTML = "For Protected Group: Female"
+                }
+                else if (searchIDs[i]==3) {
+                  h.innerHTML = "For Protected Group: Other "
+                }
+
+
+                h.style.textAlign = "center";
+                h.style.margin = "20px";
+                parent.insertAfter(h,refElem);
+
+
+
+                var box = document.createElement("BUTTON");
+                box.innerHTML = "4/5th Rule";
+                box.style.background = "magenta";
+                box.style.width = "20%";
+                box.style.height = "100px";
+                box.style.borderRadius  = "10px";
+                box.style.margin = "20px";
+                box.id="AIGender"+i.toString();
+                var refElem = document.getElementById("HGender"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box, refElem);
+                var aiStart = aiReport.indexOf("Based",ai);
+                var aiEnd = aiReport.indexOf("vulnerabilities",ai);
+                aiEnd += 15;
+                aiStartList.push(aiStart);
+                aiEndList.push(aiEnd);
+                ai = aiEnd;
+                console.log(aiReport.substring(aiStart,aiEnd));
+
+
+                var box2 = document.createElement("BUTTON");
+                box2.innerHTML = "Chi-Square Test";
+                box2.style.background = "magenta";
+                box2.style.width = "20%";
+                box2.style.height = "100px";
+                box2.style.borderRadius  = "10px";
+                box2.style.margin = "20px";
+                box2.id="CSGender"+i.toString();
+                var refElem = document.getElementById("AIGender"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box2, refElem);
+                var csStart = csReport.indexOf("The",cs);
+                var csEnd = csReport.indexOf("bias",cs);
+                csEnd +=5;
+                csStartList.push(csStart);
+                csEndList.push(csEnd);
+                cs = csEnd;
+                console.log(csReport.substring(csStart,csEnd));
+
+
+                var box3 = document.createElement("BUTTON");
+                box3.innerHTML = "Standard Deviation Test";
+                box3.style.background = "magenta";
+                box3.style.width = "20%";
+                box3.style.height = "100px";
+                box3.style.borderRadius  = "10px";
+                box3.style.margin = "20px";
+                box3.id="SDGender"+i.toString();
+                var refElem = document.getElementById("CSGender"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box3, refElem);
+                var sdStart = sdReport.indexOf("The",sd);
+                var sdEnd = sdReport.indexOf("vulnerabilities",sd);
+                sdEnd += 15;
+                sdStartList.push(sdStart);
+                sdEndList.push(sdEnd);
+                sd = sdEnd;
+                console.log(sdReport.substring(sdStart,sdEnd));
+
+
+                var box4 = document.createElement("BUTTON");
+                box4.innerHTML = "Confidence Interval Test";
+                box4.style.background = "magenta";
+                box4.style.width = "20%";
+                box4.style.height = "100px";
+                box4.style.borderRadius  = "10px";
+                box4.style.margin = "20px";
+                box4.id="CIGender"+i.toString();
+                var refElem = document.getElementById("SDGender"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box4, refElem);
+                var ciStart = ciReport.indexOf("The",ci);
+                var ciEnd = ciReport.indexOf("vulnerabilities",ci);
+                ciEnd += 15;
+                ciStartList.push(ciStart);
+                ciEndList.push(ciEnd);
+                ci = ciEnd;
+
+                var linebreak = document.createElement("br");
+                linebreak.id = "linebreakGender"+i.toString();
+                var refElem = document.getElementById("CIGender"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(linebreak, refElem);
+
+                var refElem = document.getElementById("linebreakGender"+i.toString());
+                var parent = refElem.parentNode;
+
+
+              }
+
+              var k;
+              for(k=0; k<searchIDs.length;k++ ){
+                //element.addEventListener("click", function(){ alert("Hello World!"); });
+
+                var id = "AIGender"+k.toString();
+              //  var aaa = document.getElementById(id);
+                document.getElementById(id).onmouseover = getClickCallbackAIGender(k, aiReport, aiStartList, aiEndList);
+              //  aaa.onclick = getClickCallbackAI(k, aiReport, aiStartList, aiEndList);
+
+                var id = "CSGender"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackCSGender(k, csReport, csStartList, csEndList);
+
+                var id = "SDGender"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackSDGender(k, sdReport, sdStartList, sdEndList);
+
+                var id = "CIGender"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackCIGender(k, ciReport, ciStartList, ciEndList);
+
+              }
+
+                formatAdverseImpact(data.aiReport);
+                formatAdverseImpact(data.csReport);
+                formatAdverseImpact(data.sdReport);
+                formatAdverseImpact(data.ciReport);
+                formatAdverseImpact(data.pdReport);
+                // $("#results").removeClass('d-none')
+                // $('html, body').animate({
+                //     scrollTop: $("#results").offset().top
+                // }, 1000);
+
 
                 $("#resultsGender").removeClass('d-none')
                 $('html, body').animate({
@@ -1193,14 +1561,285 @@
                 }, 1000);
             }
 
-            function populateDataAge(data) {
-              console.log("yes");
+            function getClickCallbackAIGender(i, aiReport, aiStartList, aiEndList) {
+              return function() {
+                var id = "AIGender"+i.toString();
+                var ai = document.getElementById("myDIVGender");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIVGender").innerHTML=aiReport.substring(aiStartList[i],aiEndList[i]);
+                if (ai.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    ai.style.opacity = 1;
+                    ai.style.transform = 'scale(1)';
+                    ai.style.display = 'block';
+                    // $('html, body').animate({
+                    //     scrollTop: $("#results").offset().top
+                    // }, 1000);
+                  },700);
+                } else {
+                  ai.style.opacity = 0;
+                  ai.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    ai.style.display = 'none';
+                  },700);
+                }
 
-                $("#aiReportAge").html(data.aiReport);
-                $("#csReportAge").html(data.csReport);
-                $("#sdReportAge").html(data.sdReport);
-                $("#ciReportAge").html(data.ciReport);
-                $("#pdReportAge").html(data.pdReport);
+                  };
+            }
+
+            function getClickCallbackCSGender(i, csReport, csStartList, csEndList) {
+              return function() {
+                var id = "CSGender"+i.toString();
+                var cs = document.getElementById("myDIVGender");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIVGender").innerHTML=csReport.substring(csStartList[i],csEndList[i]);
+                if (cs.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    cs.style.opacity = 1;
+                    cs.style.transform = 'scale(1)';
+                    cs.style.display = 'block';
+                  },700);
+                } else {
+                  cs.style.opacity = 0;
+                  cs.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    cs.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+            function getClickCallbackSDGender(i, sdReport, sdStartList, sdEndList) {
+              return function() {
+                var id = "SDGender"+i.toString();
+                var sd = document.getElementById("myDIVGender");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIVGender").innerHTML=sdReport.substring(sdStartList[i],sdEndList[i]);
+                if (sd.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    sd.style.opacity = 1;
+                    sd.style.transform = 'scale(1)';
+                    sd.style.display = 'block';
+                  },700);
+                } else {
+                  sd.style.opacity = 0;
+                  sd.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    sd.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+            function getClickCallbackCIGender(i, ciReport, ciStartList, ciEndList) {
+              return function() {
+                var id = "CIGender"+i.toString();
+                var ci = document.getElementById("myDIVGender");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIVGender").innerHTML=ciReport.substring(ciStartList[i],ciEndList[i]);
+                if (ci.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    ci.style.opacity = 1;
+                    ci.style.transform = 'scale(1)';
+                    ci.style.display = 'block';
+                  },700);
+                } else {
+                  ci.style.opacity = 0;
+                  ci.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    ci.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+
+            function populateDataAge(data) {
+              var aiReport = data.aiReport;
+              var csReport = data.csReport;
+              var sdReport = data.sdReport;
+              var ciReport = data.ciReport;
+              //console.log(aiReport);
+
+              Node.prototype.insertAfter = function(newNode, referenceNode) {
+                  return referenceNode.parentNode.insertBefore(
+                      newNode, referenceNode.nextSibling);
+              };
+
+              var searchIDs = [];
+              $("#protected-form-age input:checkbox:checked").map(function(){
+                searchIDs.push($(this).val());
+              });
+              var refElem = document.getElementById("resultsAge");
+              var parent = refElem.parentNode;
+
+              var i;
+              var ai = 0;
+              var aiStartList = [];
+              var aiEndList = [];
+
+              var cs = 0;
+              var csStartList = [];
+              var csEndList = [];
+
+              var sd = 0;
+              var sdStartList = [];
+              var sdEndList = [];
+
+              var ci = 0;
+              var ciStartList = [];
+              var ciEndList = [];
+
+              for(i=0; i<searchIDs.length;i++ ){
+
+                var h = document.createElement("H5");
+                h.style.width = "100%";
+                h.style.height = "50px";
+                h.style.backgroundColor = "orange";
+                h.style.borderRadius  = "10px";
+                h.id="HAge"+i.toString();
+                if(searchIDs[i]==1){
+                  h.innerHTML = "For Protected Group: People below the age of 40 "
+                }
+                else if (searchIDs[i]==2) {
+                  h.innerHTML = "For Protected Group: People above or equal to the age of 40"
+                }
+
+
+
+                h.style.textAlign = "center";
+                h.style.margin = "20px";
+                parent.insertAfter(h,refElem);
+
+
+
+                var box = document.createElement("BUTTON");
+                box.innerHTML = "4/5th Rule";
+                box.style.background = "magenta";
+                box.style.width = "20%";
+                box.style.height = "100px";
+                box.style.borderRadius  = "10px";
+                box.style.margin = "20px";
+                box.id="AIAge"+i.toString();
+                var refElem = document.getElementById("HAge"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box, refElem);
+                var aiStart = aiReport.indexOf("Based",ai);
+                var aiEnd = aiReport.indexOf("vulnerabilities",ai);
+                aiEnd += 15;
+                aiStartList.push(aiStart);
+                aiEndList.push(aiEnd);
+                ai = aiEnd;
+                console.log(aiReport.substring(aiStart,aiEnd));
+
+
+                var box2 = document.createElement("BUTTON");
+                box2.innerHTML = "Chi-Square Test";
+                box2.style.background = "magenta";
+                box2.style.width = "20%";
+                box2.style.height = "100px";
+                box2.style.borderRadius  = "10px";
+                box2.style.margin = "20px";
+                box2.id="CSAge"+i.toString();
+                var refElem = document.getElementById("AIAge"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box2, refElem);
+                var csStart = csReport.indexOf("The",cs);
+                var csEnd = csReport.indexOf("bias",cs);
+                csEnd +=5;
+                csStartList.push(csStart);
+                csEndList.push(csEnd);
+                cs = csEnd;
+                console.log(csReport.substring(csStart,csEnd));
+
+
+                var box3 = document.createElement("BUTTON");
+                box3.innerHTML = "Standard Deviation Test";
+                box3.style.background = "magenta";
+                box3.style.width = "20%";
+                box3.style.height = "100px";
+                box3.style.borderRadius  = "10px";
+                box3.style.margin = "20px";
+                box3.id="SDAge"+i.toString();
+                var refElem = document.getElementById("CSAge"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box3, refElem);
+                var sdStart = sdReport.indexOf("The",sd);
+                var sdEnd = sdReport.indexOf("vulnerabilities",sd);
+                sdEnd += 15;
+                sdStartList.push(sdStart);
+                sdEndList.push(sdEnd);
+                sd = sdEnd;
+                console.log(sdReport.substring(sdStart,sdEnd));
+
+
+                var box4 = document.createElement("BUTTON");
+                box4.innerHTML = "Confidence Interval Test";
+                box4.style.background = "magenta";
+                box4.style.width = "20%";
+                box4.style.height = "100px";
+                box4.style.borderRadius  = "10px";
+                box4.style.margin = "20px";
+                box4.id="CIAge"+i.toString();
+                var refElem = document.getElementById("SDAge"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(box4, refElem);
+                var ciStart = ciReport.indexOf("The",ci);
+                var ciEnd = ciReport.indexOf("vulnerabilities",ci);
+                ciEnd += 15;
+                ciStartList.push(ciStart);
+                ciEndList.push(ciEnd);
+                ci = ciEnd;
+
+                var linebreak = document.createElement("br");
+                linebreak.id = "linebreakAge"+i.toString();
+                var refElem = document.getElementById("CIAge"+i.toString());
+                var parent = refElem.parentNode;
+                parent.insertAfter(linebreak, refElem);
+
+                var refElem = document.getElementById("linebreakAge"+i.toString());
+                var parent = refElem.parentNode;
+
+
+              }
+
+              var k;
+              for(k=0; k<searchIDs.length;k++ ){
+                //element.addEventListener("click", function(){ alert("Hello World!"); });
+
+                var id = "AIAge"+k.toString();
+              //  var aaa = document.getElementById(id);
+                document.getElementById(id).onmouseover = getClickCallbackAIAge(k, aiReport, aiStartList, aiEndList);
+              //  aaa.onclick = getClickCallbackAI(k, aiReport, aiStartList, aiEndList);
+
+                var id = "CSAge"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackCSAge(k, csReport, csStartList, csEndList);
+
+                var id = "SDAge"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackSDAge(k, sdReport, sdStartList, sdEndList);
+
+                var id = "CIAge"+k.toString();
+                document.getElementById(id).onmouseover = getClickCallbackCIAge(k, ciReport, ciStartList, ciEndList);
+
+              }
+
+                formatAdverseImpact(data.aiReport);
+                formatAdverseImpact(data.csReport);
+                formatAdverseImpact(data.sdReport);
+                formatAdverseImpact(data.ciReport);
+                formatAdverseImpact(data.pdReport);
+                // $("#results").removeClass('d-none')
+                // $('html, body').animate({
+                //     scrollTop: $("#results").offset().top
+                // }, 1000);
+
 
                 $("#resultsAge").removeClass('d-none')
                 $('html, body').animate({
@@ -1208,11 +1847,110 @@
                 }, 1000);
             }
 
+            function getClickCallbackAIAge(i, aiReport, aiStartList, aiEndList) {
+              return function() {
+                var id = "AIAge"+i.toString();
+                var ai = document.getElementById("myDIVAge");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIVAge").innerHTML=aiReport.substring(aiStartList[i],aiEndList[i]);
+                if (ai.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    ai.style.opacity = 1;
+                    ai.style.transform = 'scale(1)';
+                    ai.style.display = 'block';
+                    // $('html, body').animate({
+                    //     scrollTop: $("#results").offset().top
+                    // }, 1000);
+                  },700);
+                } else {
+                  ai.style.opacity = 0;
+                  ai.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    ai.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+            function getClickCallbackCSAge(i, csReport, csStartList, csEndList) {
+              return function() {
+                var id = "CSAge"+i.toString();
+                var cs = document.getElementById("myDIVAge");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIVAge").innerHTML=csReport.substring(csStartList[i],csEndList[i]);
+                if (cs.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    cs.style.opacity = 1;
+                    cs.style.transform = 'scale(1)';
+                    cs.style.display = 'block';
+                  },700);
+                } else {
+                  cs.style.opacity = 0;
+                  cs.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    cs.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+            function getClickCallbackSDAge(i, sdReport, sdStartList, sdEndList) {
+              return function() {
+                var id = "SDAge"+i.toString();
+                var sd = document.getElementById("myDIVAge");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIVAge").innerHTML=sdReport.substring(sdStartList[i],sdEndList[i]);
+                if (sd.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    sd.style.opacity = 1;
+                    sd.style.transform = 'scale(1)';
+                    sd.style.display = 'block';
+                  },700);
+                } else {
+                  sd.style.opacity = 0;
+                  sd.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    sd.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
+            function getClickCallbackCIAge(i, ciReport, ciStartList, ciEndList) {
+              return function() {
+                var id = "CIAge"+i.toString();
+                var ci = document.getElementById("myDIVAge");
+                //var aiReport = data.aiReport;
+                document.getElementById("myDIVAge").innerHTML=ciReport.substring(ciStartList[i],ciEndList[i]);
+                if (ci.style.display === "none") {
+                  //ai.style.display = "block";
+                  window.setTimeout(function(){
+                    ci.style.opacity = 1;
+                    ci.style.transform = 'scale(1)';
+                    ci.style.display = 'block';
+                  },700);
+                } else {
+                  ci.style.opacity = 0;
+                  ci.style.transform = 'scale(0)';
+                  window.setTimeout(function(){
+                    ci.style.display = 'none';
+                  },700);
+                }
+
+                  };
+            }
+
             function formatAdverseImpact(data){
-              var $ai = $( "#aiReport" );
+              //var $ai = $( "#aiReport" );
               str = data;
-              var indexofThe = str.indexOf("The",0);
-              var heading = str.substring(0,indexofThe);
+              // var indexofThe = str.indexOf("The",0);
+              // var heading = str.substring(0,indexofThe);
               html = $.parseHTML( str );
 
 

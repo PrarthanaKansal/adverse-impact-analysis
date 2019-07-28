@@ -24,24 +24,56 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
-    
 
+<style>
+.dropdn {
+  position: absolute;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  /*width: 11px;*/
+}
+</style>
     <!-- NAVBAR -->
     <header class="site-navbar mt-3">
       <div class="container-fluid">
-        <div class="row align-items-center">
-          
+        <div class="row align-items-left">
+
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
               <li><a href="/" class="nav-link active">Home</a></li>
-              <li><a href="selection">Selection</a></li>
-              <li><a href="#">Promotion</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Cross-Comparisons</a></li>
-              <li class="d-lg-none"><a href="#">Contact Us</a></li>
+              <li><button class="btn btn-primary dropdown-toggle" style="border:1px solid transparent; background-color: transparent;" data-toggle="dropdown">Employment Decisions
+              <span class="caret"></span></button>
+
+              <ul class="dropdown-menu">
+                <!-- <li><a href="index"style="color:black">Home</a></li> -->
+               <li><a href="selection"style="color:black">Selection</a></li>
+               <li><a href ="promotion"style="color:black">Promotions</a></li>
+               <li><a href="demotion"style="color:black">Demotions</a></li>
+               <li><a href="termination"style="color:black">Termination</a></li>
+
+              </ul>
+            </li>
+
+
             </ul>
+            <!-- <div class="dropdn">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Employment Decisions
+    <span class="caret"></span></button>
+
+    <ul class="dropdown-menu">
+      <li><a href="index"style="color:black">Home</a></li>
+     <li><a href="selection"style="color:black">Selection</a></li>
+     
+     <li><a href="demotion"style="color:black">Demotions</a></li>
+     <li><a href="termination"style="color:black">Termination</a></li>
+
+    </ul>
+
+  </div> --> -->
           </nav>
-          
+
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
               <a href="#" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-paper-plane"></span>Contact Us</a>

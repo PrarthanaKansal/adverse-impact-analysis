@@ -7,6 +7,8 @@ import os
 
 app = Flask(__name__)
 
+global jobInfo
+
 @app.route("/")
 def index():
     return render_template('index.html')
@@ -19,9 +21,31 @@ def render_selection():
 def render_promotion():
     return render_template('promotion.html')
 
+@app.route("/demotion")
+def render_demotion():
+    return render_template('demotion.html')
+
+@app.route("/termination")
+def render_termination():
+    return render_template('termination.html')
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'), 'images/favicon.ico', mimetype='image/favicon.ico')
+
+# @app.route("/api/jobInfo", methods=['GET', 'POST'])
+# def jobInfo():
+#     if(request.form.to_dict() == {}):
+#         return jsonify({'error' : '500'})
+#
+#     jobInfo = json.loads(request.form['a'])
+#     print(jobInfo)
+#     return jsonify({
+#
+#
+#         'jobInfo' : jobInfo,
+#     })
+
 
 
 @app.route("/api/compute", methods=['GET', 'POST'])
@@ -595,6 +619,7 @@ def compute():
     print(csArray)
     print(sdArray)
     print(ciArray)
+    #print(jobInfo)
     return jsonify({
         'aiReport' : aiReport,
         'csReport' : csReport,
@@ -605,6 +630,8 @@ def compute():
         'csArray' : csArray,
         'ciArray' : ciArray,
         'sdArray' : sdArray,
+
+        # 'jobInfo' : jobInfo,
     })
 
 if(__name__ == "__main__"):

@@ -3,42 +3,48 @@
 <!-- HOME -->
 <section class="home-section section-hero overlay bg-image" style="background-image: url({{ url_for('static', filename='images/hero_1.jpg')}});" id="home-section">
 
+
 <br>
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<style>
+.dropdn {
+  position: absolute;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 1110px;
+}
+</style>
+
 
 <div class="container">
  <div class="row align-items-center justify-content-center">
           <div class="col-md-12">
             <div class="mb-5 text-center">
-              <p style="font-size:70px"class="text-orange font-weight-bold"><mark style="background-color:blue;" ><span style="color:white"><bold>BALANCED HIRING </mark></bold></span></p>
-             
-
-<br>
+              <p style="font-size:60px"class="text-orange font-weight-bold"><mark style="background-color:blue;" ><span style="color:white"><bold>BALANCED HIRING </mark></bold></span></p>
 
 
 
-<div class="dropdown">
+<div class="dropdn">
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Click for Instructions
     <span class="caret"></span></button>
-    <center>
+
     <ul class="dropdown-menu">
-     <li><a href="#">There are three categories- Race/Ethnicity, Gender, Age. For each hire, use the hiring pool and potential candidates selected to understand potential unconscious bias and avoid unintentional adverse impacts for candidates and your company. Enter the job title, job level location and projected data of hire. Then input the total number of applicants in the left column and the total number potentially selected in the race/ethnicity, gender, and/or age categories. This tool will calculate four separate tests to understand your balance in hiring for this position. Click compute to understand whether your hiring decisions will cause adverse impacts.</center></a></li>
-      
+     <li>There are three categories- Race/Ethnicity, Gender, Age. For each hire, use the hiring pool and potential candidates selected to understand potential unconscious bias and avoid unintentional adverse impacts for candidates and your company. Enter the job title, job level location and projected data of hire. Then input the total number of applicants in the left column and the total number potentially selected in the race/ethnicity, gender, and/or age categories. This tool will calculate four separate tests to understand your balance in hiring for this position. Click compute to understand whether your hiring decisions will cause adverse impacts.</li>
+
     </ul>
   </div>
 <br>
 <br>
 <br>
 <br>
-
+<br>
+<br>
 
                         <form>
                           <div class="row">
@@ -116,6 +122,57 @@
                             </div>
                           </div>
                         </form>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-primary btn-lg mt-4 mb-5 w-50" onclick="compute(event);">Enter</button>
+                            </div>
+                        </div>
+
+                  <script>
+                    var sendData = null;
+
+
+                    function compute(e) {
+
+                      e.preventDefault();
+                      if(checkInputs()){
+                        var a = "Job Title: "+$("#jobTitle").val()+
+                          " <br>Job Location: "+$("#jobLocation").val()+
+                            " <br>Job Level: "+$("#jobLevel").val()+
+                              "<br>Date of Hire: "+$("#hireDate").val()+"";
+                        localStorage.setItem("jobInfo", a);
+                        }
+                      }
+
+
+
+                    function checkInputs(){
+                      console.log("In");
+                      var jobTitle = $("#jobTitle").val();
+                      var jobLocation = $("#jobLocation").val();
+                      var jobLevel = $("#jobLevel").val();
+                      var hireDate = $("#hireDate").val();
+                      console.log("first");
+                      if(jobTitle === ""){
+                        alert("Kindly enter the Job Title");
+                        return false;
+                      }
+                      console.log("se");
+                      if(jobLevel === ""){
+                        alert("Kindly enter the Job Level");
+                        return false;
+                      }
+                      console.log("th");
+                      if(hireDate == null){
+                        alert("Kindly enter the date of hire")
+                        return false;
+                      }
+
+                      //console.log(a);
+                      return true;
+
+                    }
+                  </script>
 <br>
 <br>
 <br>
@@ -127,68 +184,51 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>   
+
     </section>
- 
+
     <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url({{ url_for('static', filename='images/hero_1.jpg')}});">
       <div class="container" >
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-7 text-center">
-            <h2 class="section-title mb-2 text-white">Balanced Hiring</h2>
-              <h2 class="section-title mb-2 text-white">Avoid Unconscious Bias</h2>
-              <h2 class="section-title mb-2 text-white">Guard Against Adverse Impacts</h2>
-           
-          </div>
-        </div>
         <div class="row pb-0 block__19738 section-counter">
-
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="1930">0</strong>
             </div>
-            <span class="caption">Candidates</span>
+            <span style="font-size:25px"class="caption"><a href="selection"style="color:white">Selections</a></span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="54">0</strong>
             </div>
-            <span class="caption">Jobs Posted</span>
+            <span style="font-size:25px"class="caption"><a href="promotion"style="color:white">Promotions</a></span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="120">0</strong>
             </div>
-            <span class="caption">Jobs Filled</span>
+            <span style="font-size:25px"class="caption"><a href="demotion" style="color:white">Demotions</a></span>
           </div>
 
           <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
             <div class="d-flex align-items-center justify-content-center mb-2">
-              <strong class="number" data-number="550">0</strong>
             </div>
-            <span class="caption">Companies</span>
+            <span style="font-size:25px"class="caption"><a href="Termination"style="color:white">Terminations</a></span>
           </div>
 
-            
+
         </div>
       </div>
     </section>
 
+
     <section class="bg-light pt-5 testimony-full">
-        <div class="owl-carousel single-carousel">        
+        <div class="owl-carousel single-carousel">
           <div class="container">
             <div class="row">
               <div class="col-lg-6 mx-auto">
-              
+
                 <blockquote>
-                  <p>&ldquo;Enter some qoute......... .&rdquo;</p>
-                  <p><cite> &mdash; XYZ and ABC</cite></p>
+                  <p style="font-size:35px">&ldquo;<bold>Balanced Hiring</bold>&rdquo;</p>
+                  <!-- <p><cite> &mdash; XYZ and ABC</cite></p> -->
                 </blockquote>
               </div>
             </div>
@@ -197,10 +237,22 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-6 mx-auto">
-                
+
                 <blockquote>
-                  <p>&ldquo;Enter some qoute.........&rdquo;</p>
-                  <p><cite> &mdash; XYZ</cite></p>
+                  <p style="font-size:35px">&ldquo;<bold>Avoid Unconscious Bias</bold>&rdquo;</p>
+                  <!-- <p><cite> &mdash; XYZ</cite></p> -->
+                </blockquote>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 mx-auto">
+
+                <blockquote>
+                  <p style="font-size:35px">&ldquo;<bold>Guard Against Adverse Impacts</bold>&rdquo;</p>
+                  <!-- <p><cite> &mdash; XYZ</cite></p> -->
                 </blockquote>
               </div>
             </div>
